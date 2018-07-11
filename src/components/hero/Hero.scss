@@ -1,0 +1,120 @@
+.container {
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.coverPhoto {
+  background-image: url("../../assets/images/cover.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50rem;
+  @media (min-width: 320px) {
+    background-position: right;
+    height: 30rem;
+  }
+  @media (min-width: 768px) {
+    background-position: top;
+    height: 40rem;
+  }
+  @media (min-width: 900px) {
+    height: 40rem;
+  }
+  @media (min-width: 1200px) {
+    height: 50rem;
+  }
+}
+
+.profileWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profilePicture {
+  height: 30rem;
+  width: 30rem;
+  background-image: url("../../assets/images/profile-image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  border: 3px solid white;
+  transform: translateY(-50%);
+  box-shadow: 0 0 10px 1px black;
+  @media (min-width: 320px) {
+    height: 15rem;
+    width: 15rem;
+  }
+
+  @media (min-width: 768px) {
+    height: 20rem;
+    width: 20rem;
+  }
+  @media (min-width: 900px) {
+    height: 20rem;
+    width: 20rem;
+  }
+}
+
+.profileSummary {
+  height: auto;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--light-gray-1);
+  margin-top: -30.5rem;
+  flex-direction: column;
+  @media (min-width: 320px) {
+    margin-top: -15.5rem;
+    padding-top: 8rem;
+  }
+  @media (min-width: 768px) {
+    padding-top: 0rem;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-top: -20.5rem;
+  }
+
+  @media (min-width: 768px) {
+    padding-top: 6rem;
+  }
+}
+
+.leftDetails {
+  padding-top: 5rem;
+  padding-top: 1rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  flex: 1;
+  @media (min-width: 320px) and (max-width: 400px) {
+    text-align: center;
+    align-items: center;
+  }
+  @media (min-width: 768px) and (max-width: 1200px) {
+    text-align: left;
+    align-items: flex-start;
+    padding-left: 5%;
+  }
+}
+
+.rightDetails {
+  padding-top: 5rem;
+  padding-top: 1rem;
+  flex: 1;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  @media (min-width: 768px) {
+    align-items: flex-end;
+    padding-right: 5%;
+  }
+  @media (min-width: 1200px) {
+    padding-right: 0;
+    align-items: center;
+  }
+}
