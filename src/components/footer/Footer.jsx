@@ -9,8 +9,8 @@ import GithubLogo from 'assets/images/social/github.svg';
 const Footer = () => {
   const FooterItem = (props) => (
     <div style={{ display: 'flex', alignItems: 'center' }}>
-      <div>
-        <props.logo className={props.css} width={30} height={30} />
+      <div style={{marginRight: '.5rem'}}>
+        <props.logo className={`${props.css} ${styles.logo}`} width={30} height={30} />
       </div>
       <h3>
         {props.text}
