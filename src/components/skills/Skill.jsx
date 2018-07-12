@@ -13,9 +13,9 @@ const styles = {
 
 const Skill = props => (
   <div style={styles.container}>
-    <h3>
+    <p>
       {props.name}
-    </h3>
+    </p>
   </div>
 );
 

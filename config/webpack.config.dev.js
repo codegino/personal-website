@@ -85,7 +85,7 @@ module.exports = {
     // for React Native Web.
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
-      
+
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
@@ -111,16 +111,14 @@ module.exports = {
       {
         test: /\.(js|jsx|mjs)$/,
         enforce: 'pre',
-        use: [
-          {
-            options: {
-              formatter: eslintFormatter,
-              eslintPath: require.resolve('eslint'),
-              
-            },
-            loader: require.resolve('eslint-loader'),
+        use: [{
+          options: {
+            formatter: eslintFormatter,
+            eslintPath: require.resolve('eslint'),
+
           },
-        ],
+          loader: require.resolve('eslint-loader'),
+        }, ],
         include: paths.appSrc,
       },
       {
@@ -145,7 +143,7 @@ module.exports = {
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
-              
+
               // This is a feature of `babel-loader` for webpack (not Babel itself).
               // It enables caching results in ./node_modules/.cache/babel-loader/
               // directory for faster rebuilds.
@@ -192,22 +190,36 @@ module.exports = {
             ],
           },
           {
-          test: /\.scss$/,
-          use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: [{
-                loader: 'css-loader',
-                options: {
-                  modules: true,
-                  sourcemap: true,
-                  importLoaders: 2,
-                  localIdentName: '[name]__[local]__[hash:base64:5]'
-                }
+            test: /\.scss$/,
+            use: ExtractTextPlugin.extract({
+              fallback: 'style-loader',
+              use: [{
+                  loader: 'css-loader',
+                  options: {
+                    modules: true,
+                    sourcemap: true,
+                    importLoaders: 2,
+                    localIdentName: '[name]__[local]__[hash:base64:5]'
+                  }
+                },
+                'sass-loader'
+              ],
+            })
+          },
+          {
+            test: /\.svg$/,
+            use: [
+              {
+                loader: "babel-loader"
               },
-              'sass-loader'
-            ],
-          })
-        },
+              {
+                loader: "react-svg-loader",
+                options: {
+                  jsx: true // true outputs JSX tags
+                }
+              }
+            ]
+          },
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
           // In production, they would get copied to the `build` folder.
@@ -263,7 +275,11 @@ module.exports = {
     // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
     // You can remove this if you don't use Moment.js:
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-    new ExtractTextPlugin({filename: '[name].css', allChunks: true, disable: true}),
+    new ExtractTextPlugin({
+      filename: '[name].css',
+      allChunks: true,
+      disable: true
+    }),
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.

@@ -1,16 +1,18 @@
 import React from 'react';
 import styles from './Header.scss';
 import logo from 'assets/images/logo.png';
+import { Link } from 'react-router-dom'
 
 const Header = () => (
-  <div className={styles.container}>
+  <header className={styles.container}>
     <img src={logo} className={styles.logo} alt="logo" />
-    <div className={styles.wrapper}>
-      <div>Home</div>
-      <div>Blogs</div>
-      <div>Contact Me</div>
-    </div>
-  </div>  
+    <nav className={styles.wrapper}>
+      <ul className={styles.links}>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/resume'>Resume</Link></li>
+      </ul>
+    </nav>
+  </header>
 )
 
 export default Header;

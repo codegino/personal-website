@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  justify-content: center;
   @media #{$xs-device} {
     margin: 0rem 0rem;
   }
@@ -28,10 +29,18 @@
   color: white;
 }
 
-.title {
-  font-size: 1.5em;
-}
+.skills {
+  width: 100%;
+  align-self: center;
+  margin-bottom: 1rem;
 
-.intro {
-  font-size: large;
+  @media #{$sm-device} {
+    width: 90%;
+    margin-bottom: 1.2rem;
+  }
+
+  @media #{$md-device} {
+    width: 80%;
+    margin-bottom: 2rem;
+  }
 }

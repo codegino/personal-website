@@ -1,8 +1,8 @@
+@import '../../assets/styles/variables.scss';
+
 .container {
-  font-size: 1.3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 
 .coverPhoto {
@@ -10,18 +10,18 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 50rem;
-  @media (min-width: 320px) {
+  @media #{$xs-device} {
     background-position: right;
     height: 30rem;
   }
-  @media (min-width: 768px) {
+  @media #{$md-device} {
     background-position: top;
     height: 40rem;
   }
-  @media (min-width: 900px) {
+  @media #{$lg-device} {
     height: 40rem;
   }
-  @media (min-width: 1200px) {
+  @media #{$xl-device} {
     height: 50rem;
   }
 }
@@ -43,16 +43,17 @@
   border: 3px solid white;
   transform: translateY(-50%);
   box-shadow: 0 0 10px 1px black;
-  @media (min-width: 320px) {
+  @media #{$xs-device} {
     height: 15rem;
     width: 15rem;
   }
 
-  @media (min-width: 768px) {
+  @media #{$md-device} {
     height: 20rem;
     width: 20rem;
   }
-  @media (min-width: 900px) {
+
+  @media #{$lg-device} {
     height: 20rem;
     width: 20rem;
   }
@@ -67,35 +68,32 @@
   background-color: var(--light-gray-1);
   margin-top: -30.5rem;
   flex-direction: column;
-  @media (min-width: 320px) {
+  @media #{$xs-device} {
     margin-top: -15.5rem;
     padding-top: 8rem;
   }
-  @media (min-width: 768px) {
-    padding-top: 0rem;
+  @media #{$md-device} {
+    padding-top: 6rem;
     align-items: flex-start;
     flex-direction: row;
     margin-top: -20.5rem;
   }
-
-  @media (min-width: 768px) {
-    padding-top: 6rem;
-  }
 }
 
-.leftDetails {
+
+@mixin details () {
   padding-top: 5rem;
   padding-top: 1rem;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  text-align: left;
+  text-align: center;
   flex: 1;
-  @media (min-width: 320px) and (max-width: 400px) {
-    text-align: center;
-    align-items: center;
-  }
-  @media (min-width: 768px) and (max-width: 1200px) {
+}
+
+.leftDetails {
+  @include details();
+  @media #{$md-device} {
     text-align: left;
     align-items: flex-start;
     padding-left: 5%;
@@ -103,18 +101,10 @@
 }
 
 .rightDetails {
-  padding-top: 5rem;
-  padding-top: 1rem;
-  flex: 1;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  @media (min-width: 768px) {
+  @include details();
+  @media #{$md-device} {
+    text-align: right;
     align-items: flex-end;
     padding-right: 5%;
-  }
-  @media (min-width: 1200px) {
-    padding-right: 0;
-    align-items: center;
   }
 }

@@ -1,54 +1,38 @@
 import React from 'react';
-import Skill from './Skill';
-import colors from 'enums/colors';
+import SkillSet from './SkillSet';
+import styles from './Skills.scss';
 
-const styles = {
-  container: {
-    display: 'flex',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    width: '80%',
-    alignSelf: 'center',
-    backgroundColor: colors.colorPrimary,
-  },
-  title: {
-    alignSelf: 'center',
-  },
-  wrapper: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    backgroundColor: colors.colorSecondary,
-  }
+const Skills = () => {
+    const skillSet = [
+        {
+            title: 'Current Skills',
+            skills: ['ReactJS', 'React Native', 'Vue', 'jest', 'javascript/es6', 'HTML5', 'CSS3'],
+        },
+        {
+            title: 'Frontend Libraries',
+            skills: [
+                'redux', 'redux-saga', 'vue-router', 'react-native-navigaton', 'react-router',
+                'vue-router', 'animate.css', 'redux-thunk', 'less', 'sass', 'webpack', 'vuex'
+            ]
+        },
+        {
+            title: 'General Programming',
+            skills: ['Pair Programming', 'Agile/Scrum', 'Test Driven Development', 'Refactoring'],
+        },
+        {
+            title: 'Old skills',
+            skills: [
+                'Java', 'junit', 'mockito', 'C++', 'Python', 'pytest', 'gtest/gmock', 'elixir',
+                'erlang', 'kotlin'
+            ]
+        }
+    ]
+
+    return (
+        <div className={styles.container}>
+            {skillSet.map(skill => <SkillSet title={skill.title} data={skill.skills} />)}
+        </div>
+    )
 };
-
-const Skills = () => (
-  <div style={styles.container}>
-    <div style={styles.title}>
-      <h1>Technical Skills</h1>
-    </div>
-    <div style={styles.wrapper}>
-      <Skill name="ReactJS" />
-      <Skill name="React Native" />
-      <Skill name="VueJS" />
-      <Skill name="CS3" />
-      <Skill name="HTML5" />
-      <Skill name="Jest" />
-      <Skill name="Javascript/ES6" />
-      <Skill name="Java" />
-      <Skill name="C++" />
-      <Skill name="Python" />
-      <Skill name="Less" />
-      <Skill name="Sass" />
-    </div>
-    <div style={styles.title}>
-      <h1>Team Skills</h1>
-    </div>
-    <div style={styles.wrapper}>
-      <Skill name="Agile/Scrum" />
-      <Skill name="Test Driven Development" />
-    </div>
-  </div>
-)
 
 export default Skills;

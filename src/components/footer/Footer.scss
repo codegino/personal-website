@@ -12,3 +12,31 @@
   align-items: center;
   flex: 1;
 }
+
+.logo {
+  &__twitter {
+    &:hover {
+      fill: #1da1f2;
+    }
+  }
+  &__facebook{
+    &:hover {
+      fill: #3b5998;
+    }
+  }
+  &__github{
+    &:hover {
+      fill: #000;
+    }
+  }
+  &__instagram{
+    &:hover {
+      fill: #c32aa3;
+    }
+  }
+  &__linkedin{
+    &:hover {
+      fill: #007bb5;
+    }
+  }
+}
