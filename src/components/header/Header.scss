@@ -1,16 +1,31 @@
+@import '../../assets/styles/variables.scss';
+
 .container {
   display: flex;
   justify-content: space-between;
   font-size: 1.3rem;
+  background-color: var(--light-gray-1);
+
+  padding: 0 .25rem;
+  @media #{$md-device} {
+    padding: 0 .5rem;
+  }
+
+  @media #{$lg-device} {
+    padding: 0 1rem;
+  }
+
+  @media #{$xl-device} {
+    padding: 0 1rem;
+  }
 }
 
 .logo {
-  height: 2rem;
-  width: 2rem;
+  height: 3rem;
+  width: 3rem;
 }
 
 .wrapper {
-  background-color: var(--light-gray-1);
   align-self: center;
   width: 100%;
 }

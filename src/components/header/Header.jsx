@@ -8,8 +8,8 @@ const Header = () => (
     <img src={logo} className={styles.logo} alt="logo" />
     <nav className={styles.wrapper}>
       <ul className={styles.links}>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/resume'>Resume</Link></li>
+        <li><Link to='/'><p>Home</p></Link></li>
+        <li><Link to='/resume'><p>Resume</p></Link></li>
       </ul>
     </nav>
   </header>

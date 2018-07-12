@@ -3,45 +3,34 @@ import styles from './Footer.scss';
 import TwitterLogo from 'assets/images/social/twitter.svg';
 import LinkedinLogo from 'assets/images/social/linkedin.svg';
 import FacebookLogo from 'assets/images/social/facebook.svg';
+import InstagramLogo from 'assets/images/social/instagram.svg';
 import GithubLogo from 'assets/images/social/github.svg';
 
-const Footer = () => (
-  <div className={styles.container}>
-    <div className={styles.wrapper}>
+const Footer = () => {
+  const FooterItem = (props) => (
+    <div style={{ display: 'flex', alignItems: 'center' }}>
       <div>
-        <span>
-          <FacebookLogo className={styles.logo__facebook} width={50} height={50}/>
-        </span>
-        <span>
-          Facebook
-        </span>
+        <props.logo className={props.css} width={30} height={30} />
       </div>
-      <div>
-        <span>
-          <TwitterLogo className={styles.logo__twitter} width={50} height={50}/>
-        </span>
-        <span>
-          Twitter 
-        </span>
+      <h3>
+        {props.text}
+      </h3>
+    </div>
+  )
+  return (
+    <div className={styles.container}>
+      <div className={styles.wrapper}>
+        <FooterItem logo={FacebookLogo} css={styles.logo__facebook} text="Facebook" />
+        <FooterItem logo={LinkedinLogo} css={styles.logo__linkedin} text="LinkedIn" />
+        <FooterItem logo={TwitterLogo} css={styles.logo__twitter} text="Twitter" />
+        <FooterItem logo={InstagramLogo} css={styles.logo__instagram} text="Instagram" />
+        <FooterItem logo={GithubLogo} css={styles.logo__github} text="Github" />
       </div>
-      <div>
-        <span>
-          <LinkedinLogo className={styles.logo__linkedin} width={50} height={50}/>
-        </span>
-        <span>
-         LinkedIn 
-        </span>
-      </div>
-      <div>
-        <span>
-          <GithubLogo className={styles.logo__github} width={50} height={50}/>
-        </span>
-        <span>
-         Github 
-        </span>
+      <div className={styles.copyright}>
+        <h2>All rights reserve 2018</h2>
       </div>
     </div>
-  </div>
-)
+  )
+}
 
 export default Footer;
