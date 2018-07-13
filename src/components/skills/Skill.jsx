@@ -8,15 +8,22 @@ const styles = {
     padding: '2px 7px',
     boxShadow: '0 0 2px 1px black',
     margin: '5px 5px',
-  }
+  },
 };
 
-const Skill = props => (
-  <div style={styles.container}>
-    <p>
-      {props.name}
-    </p>
-  </div>
-);
+type Props = {
+  name: string,
+}
+
+const Skill = (props: Props) => {
+  const { name } = props;
+  return (
+    <div style={styles.container}>
+      <p>
+        {name}
+      </p>
+    </div>
+  );
+};
 
 export default Skill;

@@ -14,22 +14,26 @@ const styles = {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
-  }
+  },
 };
 
-const SkillSet = (props) => {
-  const skills = props.data.map(o => <Skill name={o} />)
+type SkilSetProps = {
+  data: Array,
+  title: string,
+};
+
+const SkillSet = (props: SkilSetProps) => {
+  const { data, title } = props;
+  const skills = props.data.map(o => <Skill name={o} />);
 
   return (
     <div style={styles.container}>
       <div style={styles.title}>
-        <h1>{props.title}</h1>
+        <h1>{title}</h1>
       </div>
-      <div style={styles.wrapper}>
-        {skills}
-      </div>
+      <div style={styles.wrapper}>{skills}</div>
     </div>
-  )
+  );
 };
 
 export default SkillSet;

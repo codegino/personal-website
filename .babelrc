@@ -1,0 +1,14 @@
+{
+  "presets": [
+    "react-app", ["flow"]
+  ],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./src", "./"],
+      "alias": {
+        "src": "./src",
+        "components": "./src/components"
+      }
+    }]
+  ]
+}
