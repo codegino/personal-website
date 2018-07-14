@@ -13,15 +13,13 @@ const styles = {
 
 type Props = {
   name: string,
-}
+};
 
 const Skill = (props: Props) => {
   const { name } = props;
   return (
     <div style={styles.container}>
-      <p>
-        {name}
-      </p>
+      <p>{name}</p>
     </div>
   );
 };

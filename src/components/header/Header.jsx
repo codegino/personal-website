@@ -10,9 +10,7 @@ const Header = () => (
       <ul className={styles.links}>
         <li>
           <Link to="/">
-            <p>
-              Home
-            </p>
+            <p>Home</p>
           </Link>
         </li>
         <li>
