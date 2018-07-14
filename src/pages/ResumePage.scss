@@ -2,9 +2,15 @@
 
 .container {
   display: flex;
+  flex-direction: row;
+}
+
+.wrapper {
+  display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
+  flex: 1;
   @media #{$xs-device} {
     margin: 0rem 0rem;
   }
@@ -23,12 +29,14 @@
 }
 
 .sideNavigation{
-  background-color: red;
-  position: fixed;
-  height: 100%;
-  width: 2%;
-  top: 0;
-  left: 0;
+  border-right: solid 2px black;
+  width: 45px;
+  background-color: $light-gray-1;
+  display: none;
+
+  @media #{$md-device} {
+    display: block;
+  }
 }
 
 .header {
