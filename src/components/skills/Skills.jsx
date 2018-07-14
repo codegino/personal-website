@@ -49,7 +49,7 @@ const Skills = () => {
 
   return (
     <div className={styles.container}>
-      {skillSet.map(skill => <SkillSet title={skill.title} data={skill.skills} />)}
+      {skillSet.map(skill => <SkillSet title={skill.title} key={skill.title} data={skill.skills} />)}
     </div>
   );
 };

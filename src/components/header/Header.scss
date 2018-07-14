@@ -5,24 +5,30 @@
   justify-content: space-between;
   font-size: 1.3rem;
   background-color: var(--light-gray-1);
-
   padding: 0 .25rem;
   @media #{$md-device} {
     padding: 0 .5rem;
   }
 
   @media #{$lg-device} {
-    padding: 0 1rem;
+    padding: 0 .5rem;
   }
 
   @media #{$xl-device} {
-    padding: 0 1rem;
+    padding: 0 .5rem;
   }
 }
 
 .logo {
-  height: 3rem;
-  width: 3rem;
+  transition: all .5s;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid white;
+  box-shadow: 0 0 1px 1px black;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 
 .wrapper {
@@ -40,5 +46,9 @@
   li {
     display: inline-block;
     margin: .1rem 1rem;
+    transition: all .5s;
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 }

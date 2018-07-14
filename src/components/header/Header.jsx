@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from 'assets/images/logo.png';
+import MyLogo from 'assets/images/my-logo.svg';
 import { Link } from 'react-router-dom';
 import styles from './Header.scss';
 
 const Header = () => (
   <header className={styles.container}>
-    <img src={logo} className={styles.logo} alt="logo" />
+    <MyLogo className={styles.logo} width={20} height={20} />
     <nav className={styles.wrapper}>
       <ul className={styles.links}>
         <li>

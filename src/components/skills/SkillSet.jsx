@@ -24,7 +24,10 @@ type SkilSetProps = {
 
 const SkillSet = (props: SkilSetProps) => {
   const { data, title } = props;
-  const skills = data.map(o => <Skill name={o} />);
+  const skills = data.map((o, i) => {
+    const key = `${o}-${i}`;
+    return <Skill name={o} key={key} />;
+  });
 
   return (
     <div style={styles.container}>
