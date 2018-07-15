@@ -7,7 +7,6 @@
   flex-direction: column;
   justify-content: center;
   border-bottom: 2px solid #eee;
-  padding-bottom: 2rem;
 
   h1 {
     text-decoration: underline;
@@ -16,6 +15,10 @@
 
 .experiences {
   align-self: center;
+
+  ul {
+    padding-left: 5%;
+  }
 
   p {
     text-align: left;

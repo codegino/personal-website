@@ -14,11 +14,14 @@ type ExperienceProps = {
 const Experience = (props: ExperienceProps) => {
   const { experience } = props;
   const { duties, company, position, date } = experience;
-  const tasks = duties.map(o => (
-    <li>
-      <p>{o}</p>
-    </li>
-  ));
+  const tasks = duties.map((o, i) => {
+    const key = `${o}-${i}`;
+    return (
+      <li key={key}>
+        <p>{o}</p>
+      </li>
+    );
+  });
   return (
     <div className={styles.experience}>
       <h2>

@@ -196,7 +196,7 @@ class ResumePage extends React.Component {
             <Skills />
           </div>
           <div
-            className={styles.workExperience}
+            className={styles.experiences}
             ref={el => {
               this.workExperienceRef = el;
             }}
