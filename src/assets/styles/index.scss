@@ -1,5 +1,4 @@
 @import 'variables.scss';
-
 html {
   font-size: 62.5%;
 }
@@ -13,6 +12,17 @@ html {
   --dark-gray-2: #444;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
 
 p {
   font-size: 1.6rem;
@@ -35,6 +45,8 @@ p {
 
 h1 {
   font-size: 3.0rem;
+  margin-bottom: $margin-medium;
+  text-transform: uppercase;
   @media #{$xs-device} {
     font-size: 2.6rem;
   }
@@ -54,6 +66,7 @@ h1 {
 
 h2 {
   font-size: 2.2rem;
+  margin-bottom: $margin-small;
   @media #{$xs-device} {
     font-size: 1.8rem;
   }
@@ -72,18 +85,18 @@ h2 {
 }
 
 h3 {
-  font-size: 2.0rem;
+  font-size: 1.8rem;
   @media #{$xs-device} {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
   @media #{$sm-device} {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   @media #{$lg-device} {
-    font-size: 2.0rem;
+    font-size: 1.8rem;
   }
   @media #{$xl-device} {
-    font-size: 2.2rem;
+    font-size: 2.0rem;
   }
 }
 
@@ -93,13 +106,7 @@ body {
 }
 
 p,
-div{
-  margin: 0;
-  padding: 0;
-}
-
-h1, h2, h3, h4, h5, h6, p {
-  text-align: center;
+div {
   margin: 0;
   padding: 0;
 }
