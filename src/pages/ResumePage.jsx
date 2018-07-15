@@ -5,6 +5,7 @@ import Hero from 'components/hero/HeroResume';
 import Skills from 'components/skills/Skills';
 import WorkExperience from 'components/work_experience/WorkExperience';
 import Checkpoint from 'components/button/checkpoint/Checkpoint';
+import Education from 'components/education/Education';
 import styles from './ResumePage.scss';
 
 const navStyle = {
@@ -36,6 +37,8 @@ class ResumePage extends React.Component {
 
   workExperienceRef = React.createRef();
 
+  educationRef = React.createRef();
+
   constructor(props) {
     super(props);
     this.handleScroll = this.handleScroll.bind(this);
@@ -47,6 +50,7 @@ class ResumePage extends React.Component {
     isSkillVisible: false,
     isFooterVisible: false,
     isWorkExperienceVisible: false,
+    isEducationVisible: false,
   };
 
   componentDidMount() {
@@ -64,6 +68,7 @@ class ResumePage extends React.Component {
     let isSkillVisible = false;
     let isFooterVisible = false;
     let isWorkExperienceVisible = false;
+    let isEducationVisible = false;
 
     if (this.isInViewport(this.headerRef)) {
       isHeaderVisible = true;
@@ -75,6 +80,8 @@ class ResumePage extends React.Component {
       isFooterVisible = true;
     } else if (this.isInViewport(this.workExperienceRef)) {
       isWorkExperienceVisible = true;
+    } else if (this.isInViewport(this.educationRef)) {
+      isEducationVisible = true;
     }
 
     this.setState(prevState => ({
@@ -84,6 +91,7 @@ class ResumePage extends React.Component {
       isSkillVisible,
       isFooterVisible,
       isWorkExperienceVisible,
+      isEducationVisible,
     }));
   };
 
@@ -108,6 +116,7 @@ class ResumePage extends React.Component {
       isSkillVisible,
       isFooterVisible,
       isWorkExperienceVisible,
+      isEducationVisible,
     } = this.state;
     this.isInViewport(this.headerRef.current);
     const sideCheckpoint = (
@@ -152,6 +161,16 @@ class ResumePage extends React.Component {
             isActive={isWorkExperienceVisible}
           >
             Work
+          </Checkpoint>
+          <Checkpoint
+            size={20}
+            style={navStyle.item}
+            onClick={() => {
+              this.scrollTo(this.educationRef);
+            }}
+            isActive={isEducationVisible}
+          >
+            Educ
           </Checkpoint>
           <Checkpoint
             size={20}
@@ -202,6 +221,14 @@ class ResumePage extends React.Component {
             }}
           >
             <WorkExperience />
+          </div>
+          <div
+            className={styles.education}
+            ref={el => {
+              this.educationRef = el;
+            }}
+          >
+            <Education />
           </div>
           <div
             ref={el => {
