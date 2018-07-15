@@ -14,8 +14,19 @@
   }
 }
 
+.certifications {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
 .certificate {
-  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 40%;
   margin-bottom: $margin-small;
   border-radius: .5rem;
   background-color: rgb(238, 238, 238);
@@ -29,6 +40,6 @@
     color: rgb(238, 238, 238);
     background-color: #111;
     transform: scale(1.1);
-    margin: $margin-medium;
+    margin: $margin-small;
   }
 }

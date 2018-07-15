@@ -42,7 +42,7 @@ const CertificationsAndOtherLearnings = () => {
       date: 'February 2018',
     },
     {
-      name: 'Build Responsive Real World Websites with HTML5 and CSS3',
+      name: 'HTML5 and CSS3',
       provider: 'Udemy',
       date: 'February 2018',
     },
@@ -68,7 +68,9 @@ const CertificationsAndOtherLearnings = () => {
   return (
     <div className={styles.container}>
       <h1>Certifations and Other Learnings</h1>
-      {certificationsComp}
+      <div className={styles.certifications}>
+        {certificationsComp}
+      </div>
     </div>
   );
 };
