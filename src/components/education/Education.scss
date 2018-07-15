@@ -6,9 +6,15 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: $margin-medium;
+  border-bottom: 2px solid #eee;
 
   h1 {
     text-transform: uppercase;
     text-decoration: underline;
   }
+}
+
+.school {
+  margin-bottom: $margin-medium;
 }

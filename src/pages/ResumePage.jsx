@@ -27,13 +27,9 @@ const navStyle = {
 };
 
 class ResumePage extends React.Component {
-  footerRef = React.createRef();
-
   skillsRef = React.createRef();
 
   heroRef = React.createRef();
-
-  headerRef = React.createRef();
 
   workExperienceRef = React.createRef();
 
@@ -45,10 +41,8 @@ class ResumePage extends React.Component {
   }
 
   state = {
-    isHeaderVisible: false,
     isHeroVisible: false,
     isSkillVisible: false,
-    isFooterVisible: false,
     isWorkExperienceVisible: false,
     isEducationVisible: false,
   };
@@ -63,21 +57,15 @@ class ResumePage extends React.Component {
   }
 
   changeCheckpoint = () => {
-    let isHeaderVisible = false;
     let isHeroVisible = false;
     let isSkillVisible = false;
-    let isFooterVisible = false;
     let isWorkExperienceVisible = false;
     let isEducationVisible = false;
 
-    if (this.isInViewport(this.headerRef)) {
-      isHeaderVisible = true;
-    } else if (this.isInViewport(this.heroRef)) {
+    if (this.isInViewport(this.heroRef)) {
       isHeroVisible = true;
     } else if (this.isInViewport(this.skillsRef)) {
       isSkillVisible = true;
-    } else if (this.isInViewport(this.footerRef)) {
-      isFooterVisible = true;
     } else if (this.isInViewport(this.workExperienceRef)) {
       isWorkExperienceVisible = true;
     } else if (this.isInViewport(this.educationRef)) {
@@ -86,10 +74,8 @@ class ResumePage extends React.Component {
 
     this.setState(prevState => ({
       ...prevState,
-      isHeaderVisible,
       isHeroVisible,
       isSkillVisible,
-      isFooterVisible,
       isWorkExperienceVisible,
       isEducationVisible,
     }));
@@ -111,27 +97,14 @@ class ResumePage extends React.Component {
 
   render() {
     const {
-      isHeaderVisible,
       isHeroVisible,
       isSkillVisible,
-      isFooterVisible,
       isWorkExperienceVisible,
       isEducationVisible,
     } = this.state;
-    this.isInViewport(this.headerRef.current);
     const sideCheckpoint = (
       <div style={navStyle.container}>
         <div style={navStyle.wrapper}>
-          <Checkpoint
-            size={20}
-            style={navStyle.item}
-            onClick={() => {
-              this.scrollTo(this.headerRef);
-            }}
-            isActive={isHeaderVisible}
-          >
-            Header
-          </Checkpoint>
           <Checkpoint
             size={20}
             style={navStyle.item}
@@ -172,16 +145,6 @@ class ResumePage extends React.Component {
           >
             Educ
           </Checkpoint>
-          <Checkpoint
-            size={20}
-            style={navStyle.item}
-            onClick={() => {
-              this.scrollTo(this.footerRef);
-            }}
-            isActive={isFooterVisible}
-          >
-            Footer
-          </Checkpoint>
         </div>
       </div>
     );
@@ -190,12 +153,7 @@ class ResumePage extends React.Component {
       <div className={styles.container}>
         <div className={styles.sideNavigation}>{sideCheckpoint}</div>
         <div className={styles.wrapper}>
-          <div
-            ref={el => {
-              this.headerRef = el;
-            }}
-            className={styles.header}
-          >
+          <div className={styles.header}>
             <Header />
           </div>
           <div
@@ -230,11 +188,7 @@ class ResumePage extends React.Component {
           >
             <Education />
           </div>
-          <div
-            ref={el => {
-              this.footerRef = el;
-            }}
-          >
+          <div>
             <Footer />
           </div>
         </div>
