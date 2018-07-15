@@ -7,7 +7,7 @@
   align-items: center;
   font-size: 1.3rem;
   background-color: var(--light-gray-1);
-  padding: 1rem 0 0rem 0;
+  padding: $margin-small 0 $margin-big 0;
 }
 
 .wrapper {
@@ -19,6 +19,10 @@
     flex-direction: row;
     align-self: stretch;
   }
+}
+
+.copyright {
+  margin-top: $margin-medium;
 }
 
 .logo {

@@ -34,7 +34,7 @@ const Footer = () => (
       <FooterItem Logo={GithubLogo} css={styles.logo__github} text="Github" />
     </div>
     <div className={styles.copyright}>
-      <h2>All rights reserve 2018</h2>
+      <p>All rights reserve 2018</p>
     </div>
   </div>
 );
