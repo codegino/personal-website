@@ -44,22 +44,18 @@
   }
 }
 
-.sideNavigation{
-  border-right: solid 2px black;
-  width: 45px;
-  background-color: $light-gray-1;
-  display: none;
-
-  @media #{$md-device} {
-    display: block;
-  }
-}
-
 .header {
   background-color: #222;
   padding: 2rem;
   color: white;
-  margin-bottom: 3rem;
+  margin-bottom: $margin-big;
+}
+
+.hero {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
 }
 
 .skills {
@@ -75,5 +71,16 @@
   @media #{$md-device} {
     width: 80%;
     margin-bottom: 2rem;
+  }
+}
+
+.sideNavigation{
+  border-right: solid 2px black;
+  width: 45px;
+  background-color: $light-gray-1;
+  display: none;
+
+  @media #{$md-device} {
+    display: block;
   }
 }

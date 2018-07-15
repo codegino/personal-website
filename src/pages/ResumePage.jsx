@@ -159,6 +159,7 @@ class ResumePage extends React.Component {
             ref={el => {
               this.heroRef = el;
             }}
+            className={styles.hero}
           >
             <Hero />
           </div>

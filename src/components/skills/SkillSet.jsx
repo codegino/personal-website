@@ -1,21 +1,6 @@
 import React from 'react';
 import Skill from './Skill';
-
-const styles = {
-  container: {
-    display: 'flex',
-    justifyContent: 'stretch',
-    flexDirection: 'column',
-  },
-  title: {
-    alignSelf: 'center',
-  },
-  wrapper: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-  },
-};
+import styles from './SkillSet.scss';
 
 type SkilSetProps = {
   data: Array,
@@ -30,11 +15,11 @@ const SkillSet = (props: SkilSetProps) => {
   });
 
   return (
-    <div style={styles.container}>
-      <div style={styles.title}>
-        <h1>{title}</h1>
+    <div className={styles.container}>
+      <div className={styles.title}>
+        <h2>{title}</h2>
       </div>
-      <div style={styles.wrapper}>{skills}</div>
+      <div className={styles.wrapper}>{skills}</div>
     </div>
   );
 };

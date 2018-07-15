@@ -1,0 +1,18 @@
+@import '../../assets/styles/variables.scss';
+
+.container {
+  display: flex;
+  justify-content: stretch;
+  flex-direction: column;
+  margin-bottom: $margin-medium;
+}
+
+.title {
+  align-self: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

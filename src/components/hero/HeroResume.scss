@@ -1,16 +1,21 @@
 @import '../../assets/styles/variables.scss';
-
 .container {
   height: 100%;
   width: 100%;
-  background: red;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    text-transform: uppercase;
+  }
 }
 
 .profileWrapper {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  margin-top: $margin-medium;
+  padding: 1rem;
+  background-color: var(--light-gray-1);
 }
 
 .profilePicture {
@@ -20,9 +25,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   border: 3px solid white;
-  box-shadow: 0 0 10px 1px black;
+  box-shadow: 0 0 1px 1px black;
   z-index: 100;
-
+  margin-right: $margin-medium;
+  margin-left: $margin-small;
   @media #{$md-device} {
     height: 15rem;
     width: 15rem;
@@ -31,43 +37,26 @@
 
 .profileSummary {
   height: auto;
-  width: 100%;
-  display: inline-flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--light-gray-1);
-  flex-direction: column;
-  @media #{$xs-device} {
-  }
-  @media #{$md-device} {
-    align-items: flex-start;
-    flex-direction: row;
+  flex: 1;
+  h2 {
+    margin-bottom: $margin-small;
   }
 }
 
-
 @mixin details () {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: left;
   flex: 1;
 }
 
 .leftDetails {
   @include details();
-  @media #{$md-device} {
-    text-align: left;
-    align-items: flex-start;
-    padding-left: 5%;
-  }
 }
 
 .rightDetails {
   @include details();
-  @media #{$md-device} {
-    text-align: right;
-    align-items: flex-end;
-    padding-right: 5%;
-  }
 }

@@ -31,7 +31,7 @@ const Skills = () => {
       skills: ['Pair Programming', 'Agile/Scrum', 'Test Driven Development', 'Refactoring'],
     },
     {
-      title: 'Old skills',
+      title: 'Experience With',
       skills: [
         'Java',
         'junit',
@@ -49,7 +49,12 @@ const Skills = () => {
 
   return (
     <div className={styles.container}>
-      {skillSet.map(skill => <SkillSet title={skill.title} key={skill.title} data={skill.skills} />)}
+      <div className={styles.technologies}>
+        <h1>Technologies</h1>
+      </div>
+      {skillSet.map(skill => (
+        <SkillSet title={skill.title} key={skill.title} data={skill.skills} />
+      ))}
     </div>
   );
 };
