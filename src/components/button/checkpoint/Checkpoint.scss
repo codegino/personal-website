@@ -10,25 +10,33 @@
       color: white;
       box-shadow: 0 0 10px 1px yellowgreen;
     }
-
-    .active {
-      display: block;
-    }
   }
 }
 
 a.btn {
   text-decoration: none;
-  box-shadow: 0 0 2px 1px black;
-  background-color: white;
-  color: black;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: all 1s;
+
+
+  &__inactive {
+    box-shadow: 0 0 2px 1px black;
+    background-color: white;
+    color: black;
+  }
+
+  &__active {
+    background-color: green;
+    color: white;
+    box-shadow: 0 0 10px 1px yellowgreen;
+  }
+
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
     background-color: green;
     color: white;
     box-shadow: 0 0 10px 1px yellowgreen;
@@ -43,11 +51,25 @@ a.btn {
   border-radius: 2px;
 }
 
-.active {
+.center{
   background-color: white;
   box-shadow: 0 0 10px 1px yellowgreen;
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  display: none;
 }
+
+.selected {
+  transform: scale(1.1);
+  background-color: green;
+  color: white;
+  box-shadow: 0 0 10px 1px yellowgreen;
+}
+
+// .inactive {
+//   background-color: white;
+//   box-shadow: 0 0 10px 1px yellowgreen;
+//   width: 5px;
+//   height: 5px;
+//   border-radius: 50%;
+// }

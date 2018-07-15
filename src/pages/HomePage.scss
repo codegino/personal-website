@@ -13,25 +13,20 @@
   }
 
   @media #{$lg-device} {
-    margin: 0rem 1.5rem;
+    margin: 1rem 1.5rem;
   }
 
   @media #{$xl-device} {
-    margin: 0rem 2rem;
+    margin: 1rem 3rem;
   }
 }
 
 .header {
   background-color: #222;
-  height: 15rem;
   padding: 2rem;
   color: white;
 }
 
 .title {
   font-size: 1.5em;
-}
-
-.intro {
-  font-size: large;
 }

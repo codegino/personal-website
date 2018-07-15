@@ -7,6 +7,9 @@ $xl-device: "only screen and (min-width : 1200px)";
 $color-primary: green;
 $color-secondary: blue;
 $light-gray-1: #eee;
+$dark-gray-1: #444;
+
+$font-primary-color: #444;
 
 :export {
   colorPrimary: $color-primary;

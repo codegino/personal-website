@@ -3,8 +3,26 @@ import Header from 'components/header/Header';
 import Footer from 'components/footer/Footer';
 import Hero from 'components/hero/Hero';
 import Skills from 'components/skills/Skills';
-import SideCheckpoint from './SideCheckpoint';
+import Checkpoint from 'components/button/checkpoint/Checkpoint';
 import styles from './ResumePage.scss';
+
+const navStyle = {
+  container: {
+    height: '100%',
+    width: '100%',
+  },
+  wrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    position: 'fixed',
+    left: '3px',
+    top: 0,
+  },
+  item: {
+    marginTop: '20px',
+  },
+};
 
 class ResumePage extends React.Component {
   footerRef = React.createRef();
@@ -14,6 +32,52 @@ class ResumePage extends React.Component {
   heroRef = React.createRef();
 
   headerRef = React.createRef();
+
+  constructor(props) {
+    super(props);
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+
+  state = {
+    isHeaderVisible: false,
+    isHeroVisible: false,
+    isSkillVisible: false,
+    isFooterVisible: false,
+  };
+
+  componentDidMount() {
+    this.changeCheckpoint();
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  changeCheckpoint = () => {
+    let isHeaderVisible = false;
+    let isHeroVisible = false;
+    let isSkillVisible = false;
+    let isFooterVisible = false;
+
+    if (this.isInViewport(this.headerRef)) {
+      isHeaderVisible = true;
+    } else if (this.isInViewport(this.heroRef)) {
+      isHeroVisible = true;
+    } else if (this.isInViewport(this.skillsRef)) {
+      isSkillVisible = true;
+    } else if (this.isInViewport(this.footerRef)) {
+      isFooterVisible = true;
+    }
+
+    this.setState(prevState => ({
+      ...prevState,
+      isHeaderVisible,
+      isHeroVisible,
+      isSkillVisible,
+      isFooterVisible,
+    }));
+  };
 
   scrollTo = element => {
     element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
@@ -25,17 +89,63 @@ class ResumePage extends React.Component {
     return top + offset >= 0 && top - offset <= window.innerHeight;
   };
 
+  handleScroll = () => {
+    this.changeCheckpoint();
+  };
+
   render() {
+    const { isHeaderVisible, isHeroVisible, isSkillVisible, isFooterVisible } = this.state;
+    this.isInViewport(this.headerRef.current);
+    const sideCheckpoint = (
+      <div style={navStyle.container}>
+        <div style={navStyle.wrapper}>
+          <Checkpoint
+            size={20}
+            style={navStyle.item}
+            onClick={() => {
+              this.scrollTo(this.headerRef);
+            }}
+            isActive={isHeaderVisible}
+          >
+            Header
+          </Checkpoint>
+          <Checkpoint
+            size={20}
+            style={navStyle.item}
+            onClick={() => {
+              this.scrollTo(this.heroRef);
+            }}
+            isActive={isHeroVisible}
+          >
+            Hero
+          </Checkpoint>
+          <Checkpoint
+            size={20}
+            style={navStyle.item}
+            onClick={() => {
+              this.scrollTo(this.skillsRef);
+            }}
+            isActive={isSkillVisible}
+          >
+            Skills
+          </Checkpoint>
+          <Checkpoint
+            size={20}
+            style={navStyle.item}
+            onClick={() => {
+              this.scrollTo(this.footerRef);
+            }}
+            isActive={isFooterVisible}
+          >
+            Footer
+          </Checkpoint>
+        </div>
+      </div>
+    );
+
     return (
       <div className={styles.container}>
-        <div className={styles.sideNavigation}>
-          <SideCheckpoint
-            goToHero={() => {this.scrollTo(this.heroRef)}}
-            goToHeader={() => {this.scrollTo(this.headerRef)}}
-            goToSkills={() => {this.scrollTo(this.skillsRef)}}
-            goToFooter={() => {this.scrollTo(this.footerRef)}}
-          />
-        </div>
+        <div className={styles.sideNavigation}>{sideCheckpoint}</div>
         <div className={styles.wrapper}>
           <div
             ref={el => {

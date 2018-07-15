@@ -4,7 +4,6 @@
   display: flex;
   justify-content: space-between;
   font-size: 1.3rem;
-  background-color: var(--light-gray-1);
   padding: 0 .25rem;
   @media #{$md-device} {
     padding: 0 .5rem;
@@ -42,6 +41,22 @@
   flex-direction: row;
   justify-content: flex-end;
   margin: 0;
+
+  a {
+    text-decoration: none;
+
+    &:link {
+      color: white;
+    }
+
+    &:visited{
+      color: #ddd;
+    }
+
+    // &:active {
+    //   color: red;
+    // }
+  }
 
   li {
     display: inline-block;

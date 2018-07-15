@@ -27,12 +27,12 @@ type SideNavigationProps = {
 };
 
 const SideNavigation = (props: SideNavigationProps) => {
-  const {goToFooter, goToHeader, goToHero, goToSkills} = props;
+  const { goToFooter, goToHeader, goToHero, goToSkills } = props;
 
   return (
     <div style={navStyle.container}>
       <div style={navStyle.wrapper}>
-        <Checkpoint size={20} style={navStyle.item} onClick={goToHeader}>
+        <Checkpoint size={20} style={navStyle.item} onClick={goToHeader} isActive>
           Header
         </Checkpoint>
         <Checkpoint size={20} style={navStyle.item} onClick={goToHero}>
