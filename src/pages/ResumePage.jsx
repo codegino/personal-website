@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from 'components/header/Header';
 import Footer from 'components/footer/Footer';
-import Hero from 'components/hero/Hero';
+import Hero from 'components/hero/HeroResume';
 import Skills from 'components/skills/Skills';
 import Checkpoint from 'components/button/checkpoint/Checkpoint';
 import styles from './ResumePage.scss';
@@ -151,6 +151,7 @@ class ResumePage extends React.Component {
             ref={el => {
               this.headerRef = el;
             }}
+            className={styles.header}
           >
             <Header />
           </div>

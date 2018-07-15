@@ -3,6 +3,22 @@
 .container {
   display: flex;
   flex-direction: row;
+  align-items: stretch;
+  @media #{$xs-device} {
+    margin: 0rem 0rem;
+  }
+
+  @media #{$md-device} {
+    margin-right: 0.5rem;
+  }
+
+  @media #{$lg-device} {
+    margin-right: 1.5rem;
+  }
+
+  @media #{$xl-device} {
+    margin-right: 1rem 3rem;
+  }
 }
 
 .wrapper {
@@ -12,7 +28,7 @@
   justify-content: center;
   flex: 1;
   @media #{$xs-device} {
-    margin: 0rem 0rem;
+    margin-top: 0remm;
   }
 
   @media #{$md-device} {
@@ -41,9 +57,9 @@
 
 .header {
   background-color: #222;
-  height: 15rem;
   padding: 2rem;
   color: white;
+  margin-bottom: 3rem;
 }
 
 .skills {
