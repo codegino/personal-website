@@ -7,6 +7,33 @@
   align-items: center;
   font-size: 1.3rem;
   background-color: $dark-gray-1;
-  padding: 1rem 0 1rem 0;
+  padding: 10rem 0 1rem 0;
   color: $light-gray-1;
+}
+
+.photo{
+  height: 30rem;
+  width: 30rem;
+  background-image: url("../../assets/images/profile-image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 10px 1px black;
+  margin-top: 2rem;
+  margin-bottom: 10rem;
+  @media #{$xs-device} {
+    height: 15rem;
+    width: 15rem;
+  }
+
+  @media #{$md-device} {
+    height: 20rem;
+    width: 20rem;
+  }
+
+  @media #{$lg-device} {
+    height: 20rem;
+    width: 20rem;
+  }
 }

@@ -7,10 +7,11 @@ class HomeBanner extends React.Component {
   state = {
     messages: [
       'Hi! How are you?',
-      'This is Gihooh. Your poging developer.',
-      "I'm so pogi",
-      'Pangit ka huhuhu I love you Mariel.',
-      'Pangit ka sobra. I love you Mariel.',
+      'This is Gihooh, your Software Developer who gives away free jokes. Hehe.',
+      'Got any ideas for personal, business and other uses?',
+      "Let's make them come to existense!",
+      "We'll create something marvelous together.",
+      'Welcome to my page!',
     ],
   };
 
@@ -19,10 +20,10 @@ class HomeBanner extends React.Component {
 
     return (
       <div className={styles.container}>
-        <div>
-          <h1>Welcome to my page</h1>
+        <div style={{ textAlign: 'center' }}>
           <AutoTyper messages={messages} />
         </div>
+        <div className={styles.photo}>&nbsp;</div>
       </div>
     );
   }

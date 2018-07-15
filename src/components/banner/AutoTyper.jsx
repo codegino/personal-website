@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './AutoTyper.scss';
 
 class AutoTyper extends React.PureComponent<{ messages: Array }> {
   static staticProps = {
@@ -15,7 +16,7 @@ class AutoTyper extends React.PureComponent<{ messages: Array }> {
     this.autoType();
   }
 
-  deleteMessage = () => {
+  deleteMessage = (message) => {
     const { i } = this.state;
 
     if (i > 0) {
@@ -24,7 +25,8 @@ class AutoTyper extends React.PureComponent<{ messages: Array }> {
         i: prevState.i - 1,
         inputMessage: prevState.inputMessage.slice(0, -1),
       }));
-      setTimeout(this.deleteMessage, 50);
+      const deleteSpeed = 1000 / message.length;
+      setTimeout(() => this.deleteMessage(message), deleteSpeed);
     }
   };
 
@@ -40,7 +42,7 @@ class AutoTyper extends React.PureComponent<{ messages: Array }> {
 
       await setTimeout(() => this.addMessage(message), AutoTyper.staticProps.typeSpeed);
     } else {
-      await setTimeout(() => this.deleteMessage(), 200);
+      await setTimeout(() => this.deleteMessage(message), AutoTyper.staticProps.typeSpeed);
     }
   }
 
@@ -54,13 +56,13 @@ class AutoTyper extends React.PureComponent<{ messages: Array }> {
         index: prevState.index + 1,
       }));
       await setTimeout(() => this.addMessage(messages[index]), delay);
-      this.autoType(delay + messages[index].length * AutoTyper.staticProps.typeSpeed * 2.5);
+      this.autoType(delay + messages[index].length * AutoTyper.staticProps.typeSpeed * 2.2);
     }
   }
 
   render() {
     const { inputMessage } = this.state;
-    return <input type="text" value={inputMessage} style={{ width: '100%' }} />;
+    return <textarea type="text" value={inputMessage} className={styles.input} />;
   }
 }
 

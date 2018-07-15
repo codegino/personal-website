@@ -1,0 +1,16 @@
+@import '../../assets/styles/variables.scss';
+
+.input {
+  font-size: 2.2rem;
+  width: 50rem;
+  // min-height: 10rem;
+  // background-color: green;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: .5rem;
+  padding: 1rem 2rem;
+  resize: none;
+  text-align: center;
+}
