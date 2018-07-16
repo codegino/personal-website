@@ -47,8 +47,6 @@ class HomeBanner extends React.Component {
 
     const animatedBackground = isToggleVisible ? styles.container__animated : null;
 
-    console.log(animatedBackground)
-
     return (
       <div className={`${styles.container} ${animatedBackground}`}>
         <div style={{ textAlign: 'center' }}>
