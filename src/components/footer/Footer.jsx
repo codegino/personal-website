@@ -10,14 +10,18 @@ type FooterItemProps = {
   css: string,
   text: string,
   Logo: Object,
+  url: string,
 };
 
 const FooterItem = (props: FooterItemProps) => {
-  const { Logo, css, text } = props;
+  const { Logo, css, text, url } = props;
+
   return (
     <div style={{ display: 'flex', alignItems: 'center' }}>
       <div style={{ marginRight: '.5rem' }}>
-        <Logo className={`${css} ${styles.logo}`} width={30} height={30} />
+        <a href={url} target="blank">
+          <Logo className={`${css} ${styles.logo}`} width={30} height={30} />
+        </a>
       </div>
       <h3>{text}</h3>
     </div>
@@ -27,11 +31,36 @@ const FooterItem = (props: FooterItemProps) => {
 const Footer = () => (
   <div className={styles.container}>
     <div className={styles.wrapper}>
-      <FooterItem Logo={FacebookLogo} css={styles.logo__facebook} text="Facebook" />
-      <FooterItem Logo={LinkedinLogo} css={styles.logo__linkedin} text="LinkedIn" />
-      <FooterItem Logo={TwitterLogo} css={styles.logo__twitter} text="Twitter" />
-      <FooterItem Logo={InstagramLogo} css={styles.logo__instagram} text="Instagram" />
-      <FooterItem Logo={GithubLogo} css={styles.logo__github} text="Github" />
+      <FooterItem
+        Logo={FacebookLogo}
+        css={styles.logo__facebook}
+        text="Facebook"
+        url="https://facebook.com/carlogihooh"
+      />
+      <FooterItem
+        Logo={LinkedinLogo}
+        css={styles.logo__linkedin}
+        text="LinkedIn"
+        url="https://www.linkedin.com/in/gihooh"
+      />
+      <FooterItem
+        Logo={TwitterLogo}
+        css={styles.logo__twitter}
+        text="Twitter"
+        url="https://twitter.com/carlogihooh"
+      />
+      <FooterItem
+        Logo={InstagramLogo}
+        css={styles.logo__instagram}
+        text="Instagram"
+        url="https://www.instagram.com/carlogihooh"
+      />
+      <FooterItem
+        Logo={GithubLogo}
+        css={styles.logo__github}
+        text="Github"
+        url="https://github.com/gihooh"
+      />
     </div>
     <div className={styles.copyright}>
       <p>All rights reserve 2018</p>
