@@ -24,7 +24,7 @@ const navStyle = {
   },
   item: {
     marginTop: '20px',
-  },
+  }
 };
 
 class ResumePage extends React.Component {
@@ -111,59 +111,28 @@ class ResumePage extends React.Component {
       isEducationVisible,
       isCertificationVisible,
     } = this.state;
+
+    const CP = prop => (
+      <Checkpoint
+      size={20}
+      style={navStyle.item}
+      onClick={() => {
+        this.scrollTo(prop.reference);
+      }}
+      isActive={prop.visible}
+    >
+      {prop.title}
+    </Checkpoint>
+    )
+
     const sideCheckpoint = (
       <div style={navStyle.container}>
         <div style={navStyle.wrapper}>
-          <Checkpoint
-            size={20}
-            style={navStyle.item}
-            onClick={() => {
-              this.scrollTo(this.heroRef);
-            }}
-            isActive={isHeroVisible}
-          >
-            Hero
-          </Checkpoint>
-          <Checkpoint
-            size={20}
-            style={navStyle.item}
-            onClick={() => {
-              this.scrollTo(this.skillsRef);
-            }}
-            isActive={isSkillVisible}
-          >
-            Skills
-          </Checkpoint>
-          <Checkpoint
-            size={20}
-            style={navStyle.item}
-            onClick={() => {
-              this.scrollTo(this.workExperienceRef);
-            }}
-            isActive={isWorkExperienceVisible}
-          >
-            Work
-          </Checkpoint>
-          <Checkpoint
-            size={20}
-            style={navStyle.item}
-            onClick={() => {
-              this.scrollTo(this.educationRef);
-            }}
-            isActive={isEducationVisible}
-          >
-            Educ
-          </Checkpoint>
-          <Checkpoint
-            size={20}
-            style={navStyle.item}
-            onClick={() => {
-              this.scrollTo(this.certificationRef);
-            }}
-            isActive={isCertificationVisible}
-          >
-            Cert
-          </Checkpoint>
+          <CP reference={this.heroRef} visible={isHeroVisible} title="Profile Summary" />
+          <CP reference={this.skillsRef} visible={isSkillVisible} title="Skills" />
+          <CP reference={this.workExperienceRef} visible={isWorkExperienceVisible} title="Work Experiences" />
+          <CP reference={this.educationRef} visible={isEducationVisible} title="Education" />
+          <CP reference={this.certificationRef} visible={isCertificationVisible} title="Certifications" />
         </div>
       </div>
     );

@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  flex-direction: column;
+  // flex-direction: column;
   &:hover {
     a.btn {
       transform: scale(1.1);
@@ -14,6 +14,7 @@
 }
 
 a.btn {
+  height: 100%;
   text-decoration: none;
   border-radius: 50%;
   display: flex;
@@ -21,7 +22,6 @@ a.btn {
   justify-content: center;
   cursor: pointer;
   transition: all 1s;
-
 
   &__inactive {
     box-shadow: 0 0 2px 1px black;
@@ -49,6 +49,10 @@ a.btn {
   font-size: 1rem;
   background-color: white;
   border-radius: 2px;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  align-self: center;
 }
 
 .center{
