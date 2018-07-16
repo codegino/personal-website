@@ -14,6 +14,7 @@ class HomeBanner extends React.Component {
       'Welcome to my page!',
     ],
     isTranscriptVisible: false,
+    isToggleVisible: false,
   };
 
   onToggleHandler = () => {
@@ -24,22 +25,34 @@ class HomeBanner extends React.Component {
     }));
   };
 
+  onFinishHandler = () => {
+    this.setState(prev => ({
+      ...prev,
+      isToggleVisible: true,
+    }));
+  };
+
   render() {
-    const { messages } = this.state;
+    const { messages, isToggleVisible } = this.state;
 
     const transcript = (
       <div className={styles.transcript}>{messages.map(o => <p key={o}>{o}</p>)}</div>
     );
+
+    const toggleButton = isToggleVisible ? (
+      <DefaultButton onClick={this.onToggleHandler} className={styles.transcriptToggle}>
+        See Transcript
+      </DefaultButton>
+    ) : null;
+
     const { isTranscriptVisible } = this.state;
     return (
       <div className={styles.container}>
         <div style={{ textAlign: 'center' }}>
-          <AutoTyper messages={messages} />
+          <AutoTyper messages={messages} onFinish={this.onFinishHandler} />
         </div>
         {isTranscriptVisible ? transcript : null}
-        <DefaultButton onClick={this.onToggleHandler} className={styles.transcriptToggle}>
-          See Transcript
-        </DefaultButton>
+        {toggleButton}
         <div className={styles.photo}>&nbsp;</div>
       </div>
     );

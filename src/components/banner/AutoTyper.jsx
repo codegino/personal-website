@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './AutoTyper.scss';
 
-class AutoTyper extends React.PureComponent<{ messages: Array }> {
+class AutoTyper extends React.PureComponent<{ messages: Array, onFinish: Function }> {
   static staticProps = {
     typeSpeed: 100,
   };
@@ -76,17 +76,19 @@ class AutoTyper extends React.PureComponent<{ messages: Array }> {
   };
 
   async autoType() {
-    const { messages } = this.props;
+    const { messages, onFinish } = this.props;
     let i = 0;
 
     await this.iterateWithDelay(
       messages,
       async () => {
-        await this.addMessage(messages[i], 50);
+        await this.addMessage(messages[i], 10);
         i += 1;
         if (i < messages.length) {
-          await this.sleep(1000);
-          await this.deleteMessage(30);
+          await this.sleep(100);
+          await this.deleteMessage(10);
+        } else {
+          onFinish();
         }
       },
       100
