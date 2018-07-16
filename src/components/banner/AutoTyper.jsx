@@ -8,56 +8,89 @@ class AutoTyper extends React.PureComponent<{ messages: Array }> {
 
   state = {
     inputMessage: '',
-    i: 0,
-    index: 0,
   };
 
   componentDidMount() {
     this.autoType();
   }
 
-  deleteMessage = (message) => {
-    const { i } = this.state;
+  iterateWithDelay = async (list, func, delay) => {
+    let i = 0;
+    const sleep = ms =>
+      new Promise(resolve => {
+        setTimeout(resolve, ms);
+      });
 
-    if (i > 0) {
-      this.setState(prevState => ({
-        ...prevState,
-        i: prevState.i - 1,
-        inputMessage: prevState.inputMessage.slice(0, -1),
-      }));
-      const deleteSpeed = 1000 / message.length;
-      setTimeout(() => this.deleteMessage(message), deleteSpeed);
-    }
+    const loop = async () => {
+      while (i < list.length) {
+        // eslint-disable-next-line
+        await func();
+        // eslint-disable-next-line
+        await sleep(delay);
+        i += 1;
+      }
+    };
+
+    loop();
   };
 
-  async addMessage(message) {
-    const { i } = this.state;
+  deleteMessage = async delay => {
+    const loop = async () => {
+      // eslint-disable-next-line
+      while (this.state.inputMessage.length > 0) {
+        // eslint-disable-next-line
+        await this.setState(prevState => ({
+          ...prevState,
+          inputMessage: prevState.inputMessage.slice(0, -1),
+        }));
+        // eslint-disable-next-line
+        await this.sleep(delay);
+      }
+    };
 
-    if (i < message.length) {
-      await this.setState(prevState => ({
-        ...prevState,
-        i: prevState.i + 1,
-        inputMessage: prevState.inputMessage + message[i],
-      }));
+    await loop();
+  };
 
-      await setTimeout(() => this.addMessage(message), AutoTyper.staticProps.typeSpeed);
-    } else {
-      await setTimeout(() => this.deleteMessage(message), AutoTyper.staticProps.typeSpeed);
-    }
-  }
+  sleep = ms =>
+    new Promise(resolve => {
+      setTimeout(resolve, ms);
+    });
 
-  async autoType(delay = 0) {
-    const { index } = this.state;
+  addMessage = async (message, delay) => {
+    let i = 0;
+    const loop = async () => {
+      while (i < message.length) {
+        // eslint-disable-next-line
+        this.setState(prev => ({
+          ...prev,
+          inputMessage: prev.inputMessage + message[i],
+        }));
+
+        // eslint-disable-next-line
+        await this.sleep(delay);
+        i += 1;
+      }
+    };
+
+    await loop();
+  };
+
+  async autoType() {
     const { messages } = this.props;
+    let i = 0;
 
-    if (index < messages.length) {
-      await this.setState(prevState => ({
-        ...prevState,
-        index: prevState.index + 1,
-      }));
-      await setTimeout(() => this.addMessage(messages[index]), delay);
-      this.autoType(delay + messages[index].length * AutoTyper.staticProps.typeSpeed * 2.2);
-    }
+    await this.iterateWithDelay(
+      messages,
+      async () => {
+        await this.addMessage(messages[i], 50);
+        i += 1;
+        if (i < messages.length) {
+          await this.sleep(1000);
+          await this.deleteMessage(30);
+        }
+      },
+      100
+    );
   }
 
   render() {
