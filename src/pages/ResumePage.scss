@@ -73,8 +73,15 @@
 
 .experiences {
   align-self: center;
-  width: 80%;
+  width: 95%;
   margin-bottom: $margin-medium;
+
+  @media #{$sm-device} {
+    width: 90%;
+  }
+  @media #{$md-device} {
+    width: 80%;
+  }
 }
 
 .certifications {

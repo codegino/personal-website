@@ -37,11 +37,13 @@
   margin-right: $margin-medium;
   margin-left: $margin-small;
   margin-bottom: $margin-medium;
+  border-radius: 50%;
 
   @media #{$md-device} {
     height: 20rem;
     width: 20rem;
     margin-bottom: 0;
+    border-radius: 0;
   }
 }
 
