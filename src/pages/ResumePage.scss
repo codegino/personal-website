@@ -52,10 +52,18 @@
 }
 
 .hero {
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-self: center;
+
+  @media #{$md-device} {
+    width: 90%;
+  }
+
+  @media #{$lg-device} {
+    width: 80%;
+  }
 }
 
 .skills {

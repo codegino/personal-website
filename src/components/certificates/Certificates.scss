@@ -26,7 +26,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 40%;
+  width: 90%;
   margin-bottom: $margin-small;
   border-radius: .5rem;
   background-color: rgb(238, 238, 238);
@@ -36,6 +36,9 @@
   transition: all .5s;
   cursor: pointer;
 
+  @media #{$md-device}{
+    width: 40%;
+  }
   &:hover {
     color: rgb(238, 238, 238);
     background-color: #111;

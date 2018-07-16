@@ -33,7 +33,7 @@ class HomeBanner extends React.Component {
   };
 
   render() {
-    const { messages, isToggleVisible } = this.state;
+    const { messages, isToggleVisible, isTranscriptVisible } = this.state;
 
     const transcript = (
       <div className={styles.transcript}>{messages.map(o => <p key={o}>{o}</p>)}</div>
@@ -41,15 +41,14 @@ class HomeBanner extends React.Component {
 
     const toggleButton = isToggleVisible ? (
       <DefaultButton onClick={this.onToggleHandler} className={styles.transcriptToggle}>
-        See Transcript
+        {isTranscriptVisible ? 'Hide Transcript' : 'Show Transcript'}
       </DefaultButton>
     ) : null;
 
-    const { isTranscriptVisible } = this.state;
     return (
       <div className={styles.container}>
         <div style={{ textAlign: 'center' }}>
-          <AutoTyper messages={messages} onFinish={this.onFinishHandler} />
+          <AutoTyper messages={messages} onFinish={this.onFinishHandler} className={styles.autoTyper}/>
         </div>
         {isTranscriptVisible ? transcript : null}
         {toggleButton}

@@ -1,5 +1,4 @@
 @import '../../assets/styles/variables.scss';
-
 .container {
   display: flex;
   justify-content: space-between;
@@ -11,7 +10,7 @@
   color: $light-gray-1;
 }
 
-.photo{
+.photo {
   height: 15rem;
   width: 15rem;
   background-image: url("../../assets/images/profile-image.png");
@@ -26,27 +25,23 @@
     height: 15rem;
     width: 15rem;
   }
-
   @media #{$md-device} {
     height: 20rem;
     width: 20rem;
   }
-
   @media #{$lg-device} {
     height: 20rem;
     width: 20rem;
   }
 }
 
-
 .transcript {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: $margin-small;
-  margin-top: $margin-medium;
-
-  > p {
+  width: 80%;
+  >p {
     margin-bottom: $margin-small;
   }
 }
@@ -57,4 +52,20 @@
   outline: none;
   background-color: none;
   width: 100px;
+  transition: all 1s;
+}
+
+.autoTyper {
+  padding: 1rem 2rem;
+  width: 25rem;
+  min-height: 8rem;
+
+  @media #{$sm-device} {
+    width: 30rem;
+    min-height: 7rem;
+  }
+  @media #{$md-device} {
+    width: 50rem;
+    min-height: 5rem;
+  }
 }
