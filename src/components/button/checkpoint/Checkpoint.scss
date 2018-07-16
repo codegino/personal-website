@@ -2,12 +2,19 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  // flex-direction: column;
   &:hover {
     a.btn {
       transform: scale(1.1);
       background-color: green;
       color: white;
+      box-shadow: 0 0 10px 1px yellowgreen;
+    }
+
+    .label {
+      display: block;
+      background-color: green;
+      color: white;
+      padding: .2rem .5rem;
       box-shadow: 0 0 10px 1px yellowgreen;
     }
   }
@@ -44,15 +51,18 @@ a.btn {
 }
 
 .label {
-  margin-top: 0.5rem;
-  padding: 0 .2rem;
   font-size: 1rem;
-  background-color: white;
+  font-weight: bold;
+  background-color: transparent;
   border-radius: 2px;
-  display: flex;
-  align-items: center;
+  margin-left: .5rem;
+  text-align: left;
   flex: 1;
-  align-self: center;
+  transition: all 2s;
+
+  &__inactive {
+    display: none;
+  }
 }
 
 .center{
@@ -69,11 +79,3 @@ a.btn {
   color: white;
   box-shadow: 0 0 10px 1px yellowgreen;
 }
-
-// .inactive {
-//   background-color: white;
-//   box-shadow: 0 0 10px 1px yellowgreen;
-//   width: 5px;
-//   height: 5px;
-//   border-radius: 50%;
-// }

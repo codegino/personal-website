@@ -13,20 +13,20 @@ type CheckpointProps = {
 const Checkpoint = (props: CheckpointProps) => {
   const { children, size, onClick, style, isActive, className } = props;
 
-  const selectedStyle = isActive ? styles.btn__active : styles.btn__inactive;
+  const btnStyle = isActive ? styles.btn__active : styles.btn__inactive;
+  const labeltyle = isActive ? styles.label__active : styles.label__inactive;
 
-  console.log(style)
   return (
     <div className={styles.container} style={{...style}}>
       {/* eslint-disable-next-line */}
       <a
-        className={`${styles.btn} ${selectedStyle} ${className}`}
+        className={`${styles.btn} ${btnStyle} ${className}`}
         style={{ width: size, height: size}}
         onClick={onClick}
       >
         <div className={styles.center}>&nbsp;</div>
       </a>
-      <p className={styles.label}>{isActive ? children : null}</p>
+      <p className={`${styles.label} ${labeltyle}`}>{children}</p>
     </div>
   );
 };

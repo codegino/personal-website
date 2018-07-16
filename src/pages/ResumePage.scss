@@ -1,5 +1,4 @@
 @import '../assets/styles/variables.scss';
-
 .container {
   display: flex;
   flex-direction: row;
@@ -7,15 +6,12 @@
   @media #{$xs-device} {
     margin: 0rem 0rem;
   }
-
   @media #{$md-device} {
     margin-right: 0.5rem;
   }
-
   @media #{$lg-device} {
     margin-right: 1.5rem;
   }
-
   @media #{$xl-device} {
     margin-right: 1rem 3rem;
   }
@@ -30,15 +26,12 @@
   @media #{$xs-device} {
     margin-top: 0remm;
   }
-
   @media #{$md-device} {
     margin: 0rem 0.5rem;
   }
-
   @media #{$lg-device} {
     margin: 0rem 1.5rem;
   }
-
   @media #{$xl-device} {
     margin: 0rem 2rem;
   }
@@ -56,11 +49,9 @@
   display: flex;
   justify-content: center;
   align-self: center;
-
   @media #{$md-device} {
     width: 90%;
   }
-
   @media #{$lg-device} {
     width: 80%;
   }
@@ -70,18 +61,15 @@
   width: 100%;
   align-self: center;
   margin-bottom: 1rem;
-
   @media #{$sm-device} {
     width: 90%;
     margin-bottom: 1.2rem;
   }
-
   @media #{$md-device} {
     width: 80%;
     margin-bottom: 2rem;
   }
 }
-
 
 .experiences {
   align-self: center;
@@ -94,13 +82,31 @@
   margin-bottom: $margin-big;
 }
 
-.sideNavigation{
-  border-right: solid 2px black;
-  width: 45px;
-  background-color: $light-gray-1;
-  display: none;
+.sideNavigation {
+  &__container {
+    border-right: solid 1px black;
+    width: 20px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .1);
+    display: none;
+    position: fixed;
 
-  @media #{$md-device} {
-    display: block;
+    @media #{$sm-device} {
+      display: flex;
+    }
+
+    @media #{$md-device} {
+      display: flex;
+    }
+  }
+  &__wrapper {
+    padding-top: 10rem;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 30%;
+    justify-content: space-around;
+    left: 3px;
   }
 }
