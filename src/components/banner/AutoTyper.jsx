@@ -95,7 +95,7 @@ class AutoTyper extends React.PureComponent<{ messages: Array }> {
 
   render() {
     const { inputMessage } = this.state;
-    return <textarea type="text" value={inputMessage} className={styles.input} />;
+    return <div className={styles.input}>{inputMessage}</div>;
   }
 }
 
