@@ -45,8 +45,12 @@ class HomeBanner extends React.Component {
       </DefaultButton>
     ) : null;
 
+    const animatedBackground = isToggleVisible ? styles.container__animated : null;
+
+    console.log(animatedBackground)
+
     return (
-      <div className={styles.container}>
+      <div className={`${styles.container} ${animatedBackground}`}>
         <div style={{ textAlign: 'center' }}>
           <AutoTyper messages={messages} onFinish={this.onFinishHandler} className={styles.autoTyper}/>
         </div>

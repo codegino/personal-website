@@ -6,7 +6,7 @@ const Skills = () => {
   const skillSet = [
     {
       title: 'Current Skills',
-      skills: ['ReactJS', 'React Native', 'Vue', 'jest', 'javascript/es6', 'HTML5', 'CSS3'],
+      skills: ['ReactJS', 'React Native', 'Vue', 'javascript/es6', 'HTML5', 'CSS3', 'jest'],
     },
     {
       title: 'Frontend Libraries',
@@ -14,13 +14,13 @@ const Skills = () => {
         'redux',
         'redux-saga',
         'vue-router',
+        'sass/scss',
         'react-native-navigaton',
         'react-router',
         'vue-router',
         'animate.css',
         'redux-thunk',
         'less',
-        'sass',
         'webpack',
         'jquery',
         'vuex',
@@ -28,7 +28,15 @@ const Skills = () => {
     },
     {
       title: 'General Programming',
-      skills: ['Pair Programming', 'Agile/Scrum', 'Test Driven Development', 'Refactoring'],
+      skills: [
+        'Pair Programming',
+        'Agile/Scrum',
+        'Test Driven Development',
+        'Refactoring',
+        'Design Patterns',
+        'Responsive Design',
+        'Clean Code',
+      ],
     },
     {
       title: 'Experience With',
