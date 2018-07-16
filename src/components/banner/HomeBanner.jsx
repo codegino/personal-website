@@ -1,8 +1,8 @@
 import React from 'react';
+import DefaultButton from 'components/button/DefaultButton';
 import styles from './HomeBanner.scss';
 import AutoTyper from './AutoTyper';
 
-// eslint-disable-next-line
 class HomeBanner extends React.Component {
   state = {
     messages: [
@@ -13,16 +13,33 @@ class HomeBanner extends React.Component {
       "We'll create something marvelous together.",
       'Welcome to my page!',
     ],
+    isTranscriptVisible: false,
+  };
+
+  onToggleHandler = () => {
+    const { isTranscriptVisible } = this.state;
+    this.setState(prev => ({
+      ...prev,
+      isTranscriptVisible: !isTranscriptVisible,
+    }));
   };
 
   render() {
     const { messages } = this.state;
 
+    const transcript = (
+      <div className={styles.transcript}>{messages.map(o => <p key={o}>{o}</p>)}</div>
+    );
+    const { isTranscriptVisible } = this.state;
     return (
       <div className={styles.container}>
         <div style={{ textAlign: 'center' }}>
           <AutoTyper messages={messages} />
         </div>
+        {isTranscriptVisible ? transcript : null}
+        <DefaultButton onClick={this.onToggleHandler} className={styles.transcriptToggle}>
+          See Transcript
+        </DefaultButton>
         <div className={styles.photo}>&nbsp;</div>
       </div>
     );

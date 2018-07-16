@@ -12,8 +12,8 @@
 }
 
 .photo{
-  height: 30rem;
-  width: 30rem;
+  height: 15rem;
+  width: 15rem;
   background-image: url("../../assets/images/profile-image.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -36,4 +36,25 @@
     height: 20rem;
     width: 20rem;
   }
+}
+
+
+.transcript {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: $margin-small;
+  margin-top: $margin-medium;
+
+  > p {
+    margin-bottom: $margin-small;
+  }
+}
+
+.transcriptToggle {
+  margin-top: $margin-small;
+  text-decoration: none;
+  outline: none;
+  background-color: none;
+  width: 100px;
 }
