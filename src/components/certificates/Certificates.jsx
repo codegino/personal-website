@@ -17,7 +17,7 @@ const Certification = (props: CertificateProps) => {
       <h2>{provider}</h2>
       <h3>{date}</h3>
       <a href={url} target="blank" className={styles.url}>
-        <p>Click here to view Certificate</p>
+        <p>Click here to view certificate</p>
       </a>
     </div>
   );
