@@ -5,10 +5,17 @@ import 'normalize.css';
 import './assets/styles/index.scss';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import reducers from './store/reducers/index';
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+
+const store = createStore(reducers);
 
 ReactDOM.render((
   <HashRouter>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </HashRouter>
 ), document.getElementById('root'));
 registerServiceWorker();
