@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Header from 'components/header/Header';
 import Footer from 'components/footer/Footer';
 import Hero from 'components/hero/HeroResume';
@@ -7,9 +8,17 @@ import WorkExperience from 'components/work_experience/WorkExperience';
 import Checkpoint from 'components/button/checkpoint/Checkpoint';
 import Education from 'components/education/Education';
 import Certificates from 'components/certificates/Certificates';
+import LoadingMask from 'components/masks/LoadingMask';
+import { fetchUserDetails } from 'store/actions/user';
 import styles from './ResumePage.scss';
 
-class ResumePage extends React.Component {
+type ResumePageProps = {
+  fetchUserDetails: Function,
+  userDetails: Object,
+  loading: boolean,
+}
+
+class ResumePage extends React.PureComponent<ResumePageProps> {
   skillsRef = React.createRef();
 
   heroRef = React.createRef();
@@ -34,6 +43,9 @@ class ResumePage extends React.Component {
   };
 
   componentDidMount() {
+    const {fetchUserDetails: fetchUserDetailsHandler} = this.props;
+    fetchUserDetailsHandler()
+
     this.changeCheckpoint();
     window.addEventListener('scroll', this.handleScroll);
   }
@@ -125,7 +137,9 @@ class ResumePage extends React.Component {
       </div>
     );
 
-    return (
+    const { userDetails, loading } = this.props;
+
+    return loading ? <LoadingMask /> : (
       <div className={styles.container}>
         <div className={styles.sideNavigation__container}>{sideCheckpoint}</div>
         <div className={styles.wrapper}>
@@ -138,7 +152,7 @@ class ResumePage extends React.Component {
             }}
             className={styles.hero}
           >
-            <Hero />
+            <Hero user={userDetails}/>
           </div>
           <div
             className={styles.skills}
@@ -181,4 +195,13 @@ class ResumePage extends React.Component {
   }
 }
 
-export default ResumePage;
+const mapStateToProps = state => ({
+  userDetails: state.user.user,
+  loading: state.ui.loading,
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchUserDetails: () => dispatch(fetchUserDetails()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ResumePage);

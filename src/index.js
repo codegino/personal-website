@@ -7,9 +7,10 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import reducers from './store/reducers/index';
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import reduxThunk from 'redux-thunk';
+import { createStore, applyMiddleware } from "redux";
 
-const store = createStore(reducers);
+const store = createStore(reducers, applyMiddleware(reduxThunk));
 
 ReactDOM.render((
   <HashRouter>
