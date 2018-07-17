@@ -10,13 +10,21 @@ import Education from 'components/education/Education';
 import Certificates from 'components/certificates/Certificates';
 import LoadingMask from 'components/masks/LoadingMask';
 import { fetchUserDetails } from 'store/actions/user';
+import { fetchResume } from 'store/actions/resume';
 import styles from './ResumePage.scss';
 
 type ResumePageProps = {
   fetchUserDetails: Function,
+  fetchResume: Function,
   userDetails: Object,
   loading: boolean,
-}
+  resume: {
+    education: Array,
+    skills: Array,
+    experiences: Array,
+    certifications: Array,
+  },
+};
 
 class ResumePage extends React.PureComponent<ResumePageProps> {
   skillsRef = React.createRef();
@@ -43,8 +51,13 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
   };
 
   componentDidMount() {
-    const {fetchUserDetails: fetchUserDetailsHandler} = this.props;
-    fetchUserDetailsHandler()
+    const {
+      fetchUserDetails: fetchUserDetailsHandler,
+      fetchResume: fetchResumeHandler,
+    } = this.props;
+
+    fetchUserDetailsHandler();
+    fetchResumeHandler();
 
     this.changeCheckpoint();
     window.addEventListener('scroll', this.handleScroll);
@@ -137,9 +150,11 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
       </div>
     );
 
-    const { userDetails, loading } = this.props;
+    const { userDetails, loading, resume } = this.props;
 
-    return loading ? <LoadingMask /> : (
+    return loading ? (
+      <LoadingMask />
+    ) : (
       <div className={styles.container}>
         <div className={styles.sideNavigation__container}>{sideCheckpoint}</div>
         <div className={styles.wrapper}>
@@ -152,7 +167,7 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
             }}
             className={styles.hero}
           >
-            <Hero user={userDetails}/>
+            <Hero user={userDetails} />
           </div>
           <div
             className={styles.skills}
@@ -160,7 +175,7 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
               this.skillsRef = el;
             }}
           >
-            <Skills />
+            <Skills skills={resume.skills} />
           </div>
           <div
             className={styles.experiences}
@@ -168,7 +183,7 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
               this.workExperienceRef = el;
             }}
           >
-            <WorkExperience />
+            <WorkExperience experiences={resume.experiences}/>
           </div>
           <div
             className={styles.education}
@@ -176,7 +191,7 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
               this.educationRef = el;
             }}
           >
-            <Education />
+            <Education education={resume.education}/>
           </div>
           <div
             className={styles.certifications}
@@ -184,7 +199,7 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
               this.certificationRef = el;
             }}
           >
-            <Certificates />
+            <Certificates certifications={resume.certifications}/>
           </div>
           <div>
             <Footer />
@@ -197,11 +212,16 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
 
 const mapStateToProps = state => ({
   userDetails: state.user.user,
+  resume: state.resume.resume,
   loading: state.ui.loading,
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchUserDetails: () => dispatch(fetchUserDetails()),
+  fetchResume: () => dispatch(fetchResume()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ResumePage);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ResumePage);

@@ -9,6 +9,9 @@ const defaultState = {
     middleName: null,
     lastName: null,
     email: null,
+    company: null,
+    jobTitle: null,
+    position: null,
   },
 };
 

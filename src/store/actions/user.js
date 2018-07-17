@@ -13,6 +13,9 @@ type UserProps = {
   lastName: string,
   middleName: string,
   email: string,
+  company: string,
+  jobTitle: string,
+  location: string,
 }
 
 export const fetchUserSuccess = (user: UserProps) => ({
