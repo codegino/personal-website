@@ -1,21 +1,28 @@
 import React from 'react';
 import DefaultButton from 'components/button/DefaultButton';
+import { databaseRef } from 'services/firebase';
 import styles from './HomeBanner.scss';
 import AutoTyper from './AutoTyper';
 
-class HomeBanner extends React.Component {
+class HomeBanner extends React.PureComponent {
   state = {
-    messages: [
-      'Hi! How are you?',
-      'This is Gihooh, your Software Developer who gives away free jokes. Hehe.',
-      'Got any ideas for personal, business and other uses?',
-      "Let's make them come to existense!",
-      "We'll create something marvelous together.",
-      'Welcome to my page!',
-    ],
+    messages: [],
     isTranscriptVisible: false,
     isToggleVisible: false,
   };
+
+  componentDidMount() {
+    databaseRef
+      .child('personal')
+      .child('messages')
+      .on('value', snapshot => {
+        const [messages] = Object.values(snapshot.val());
+        this.setState(prevState => ({
+          ...prevState,
+          messages,
+        }));
+      });
+  }
 
   onToggleHandler = () => {
     const { isTranscriptVisible } = this.state;
@@ -50,7 +57,11 @@ class HomeBanner extends React.Component {
     return (
       <div className={`${styles.container} ${animatedBackground}`}>
         <div style={{ textAlign: 'center' }}>
-          <AutoTyper messages={messages} onFinish={this.onFinishHandler} className={styles.autoTyper}/>
+          <AutoTyper
+            messages={messages}
+            onFinish={this.onFinishHandler}
+            className={styles.autoTyper}
+          />
         </div>
         {isTranscriptVisible ? transcript : null}
         {toggleButton}

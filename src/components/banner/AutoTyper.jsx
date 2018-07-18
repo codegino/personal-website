@@ -17,8 +17,11 @@ class AutoTyper extends React.PureComponent<AutoTyperProps> {
     inputMessage: '',
   };
 
-  componentDidMount() {
-    this.autoType();
+  componentDidUpdate(prevProps) {
+    const { messages } = this.props;
+    if (prevProps.messages.length === 0 && messages.length > 0) {
+      this.autoType();
+    }
   }
 
   iterateWithDelay = async (list, func, delay) => {
