@@ -1,28 +1,52 @@
 @import '../../assets/styles/variables.scss';
-
+// @import '../../assets/styles/links.scss';
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  @media #{$xs-device} {
-    margin: 0rem 0rem;
-  }
+  height: 100%;
+  width: 100%;
+}
 
-  @media #{$md-device} {
-    margin: 0rem 0.5rem;
-  }
-
-  @media #{$lg-device} {
-    margin: 1rem 1.5rem;
-  }
-
-  @media #{$xl-device} {
-    margin: 1rem 3rem;
-  }
+.wrapper {
+  margin-bottom: $margin-medium;
 }
 
 .header {
   background-color: #222;
   padding: 2rem;
   color: white;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.technology {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  width: 50%;
+  padding: $padding-small 0;
+  .logo {
+    transition: all 1s;
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+}
+
+.logos {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-dark;
+  h3 {
+    color: $color-light-light;
+    text-decoration: underline;
+    padding: $padding-small;
+    &:hover {
+      transition: all .25s;
+      color: yellowgreen;
+      text-decoration: underline;
+      text-decoration-color: yellow;
+    }
+  }
 }

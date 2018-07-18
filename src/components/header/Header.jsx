@@ -26,7 +26,7 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <MultiLink className={styles.multiLink} title="About" links={links} />
+            <MultiLink className={styles.multiLink} title="About" links={links}/>
           </li>
         </ul>
       </nav>
