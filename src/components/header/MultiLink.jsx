@@ -4,22 +4,14 @@ import styles from './MultiLink.scss';
 
 type MultiLinkProps = {
   title: string,
-};
+  links: Array,
+}
 
 class MultiLink extends React.PureComponent<MultiLinkProps> {
-  componentDidMount() {
-    console.log('mounted');
-  }
-
   render() {
-    const { title } = this.props;
+    const { title, links = [] } = this.props;
 
-    const a = [
-      { title: 'About Me', to: '/about-me' },
-      { title: 'About this Site', to: '/about-site' },
-    ];
-
-    const links = a.map(link => (
+    const linksList = links.map(link => (
       <NavLink
         exact
         key={link.title}
@@ -34,7 +26,7 @@ class MultiLink extends React.PureComponent<MultiLinkProps> {
     return (
       <div className={styles.container}>
         <p>{title}</p>
-        <div className={styles.listWrapper}>{links}</div>
+        <div className={styles.listWrapper}>{linksList}</div>
       </div>
     );
   }
