@@ -1,5 +1,6 @@
 @import '../../assets/styles/variables.scss';
 @import '../../assets/styles/links.scss';
+
 .container {
   height: 100%;
   width: 100%;
@@ -12,10 +13,6 @@
 .wrapper {
   margin-bottom: $margin-medium;
   width: 90%;
-  // display: flex;
-  // justify-content: center;
-  // flex-direction: column;
-  // text-align: center;
 }
 
 .header {
@@ -33,24 +30,6 @@
   margin-bottom: $margin-small; 
 }
 
-.technology {
-  display: flex;
-  justify-content: center;
-  text-align: left;
-  width: 100%;
-
-  @media #{$sm-device} {
-    width: 50%;
-  }
-
-  padding: $padding-small 0;
-  .logo {
-    transition: all 1s;
-    &:hover {
-      transform: scale(1.3);
-    }
-  }
-}
 
 .footer {
   width: 100%;

@@ -8,6 +8,7 @@ import JavascriptLogo from 'personal_website/assets/images/brands/javascript.svg
 import SassLogo from 'personal_website/assets/images/brands/sass.svg';
 import BabelLogo from 'personal_website/assets/images/brands/babel.svg';
 import WebpackLogo from 'personal_website/assets/images/brands/webpack.svg';
+import Gallery from './Gallery';
 import styles from './AboutWebsite.scss';
 
 const AboutWebsite = () => {
@@ -44,7 +45,6 @@ const AboutWebsite = () => {
     {
       name: 'Babel',
       Logo: BabelLogo,
-      width: 50,
       link: 'https://babeljs.io/',
     },
     {
@@ -55,19 +55,6 @@ const AboutWebsite = () => {
     },
   ];
 
-  const renderTechnologies = technologies.map(props => {
-    const { Logo, name, fill = null, height = 30, width = 30, link } = props;
-
-    return (
-      <div className={styles.technology} key={name}>
-        <h3 style={{ marginRight: '2rem' }}>{name}</h3>
-        <a href={link} target="blank">
-          <Logo className={styles.logo} height={height} width={width} fill={fill} />
-        </a>
-      </div>
-    );
-  });
-
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -75,14 +62,19 @@ const AboutWebsite = () => {
       </div>
       <div className={styles.wrapper}>
         <h1>This website is powered by</h1>
-        <div className={styles.content}>{renderTechnologies}</div>
+        <div className={styles.content}>
+          <Gallery data={technologies}/>        
+        </div>
         <h2>Credits to these resources</h2>
         <div className={styles.logos}>
-          <a className={styles.link} href="https://seeklogo.com/" target="blank">
+          <a className={styles.link} href="https://seeklogo.com" target="blank">
             <h3>Seek Logo</h3>
           </a>
-          <a className={styles.link} href="https://simpleicons.org/" target="blank">
+          <a className={styles.link} href="https://simpleicons.org" target="blank">
             <h3>Simple Icons</h3>
+          </a>
+          <a className={styles.link} href="https://www.flaticon.com" target="blank">
+            <h3>Flat Icon</h3>
           </a>
         </div>
       </div>
