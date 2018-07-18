@@ -59,7 +59,7 @@ const AboutWebsite = () => {
     const { Logo, name, fill = null, height = 30, width = 30, link } = props;
 
     return (
-      <div className={styles.technology}>
+      <div className={styles.technology} key={name}>
         <h3 style={{ marginRight: '2rem' }}>{name}</h3>
         <a href={link} target="blank">
           <Logo className={styles.logo} height={height} width={width} fill={fill} />
@@ -75,9 +75,8 @@ const AboutWebsite = () => {
       </div>
       <div className={styles.wrapper}>
         <h1>This website is powered by</h1>
-        <h2>Technologies Used</h2>
         <div className={styles.content}>{renderTechnologies}</div>
-        <h2>Credits to this sources</h2>
+        <h2>Credits to these resources</h2>
         <div className={styles.logos}>
           <a className={styles.link} href="https://seeklogo.com/" target="blank">
             <h3>Seek Logo</h3>
@@ -87,7 +86,7 @@ const AboutWebsite = () => {
           </a>
         </div>
       </div>
-      <Footer />
+      <Footer className={styles.footer}/>
     </div>
   );
 };

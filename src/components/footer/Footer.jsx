@@ -28,44 +28,47 @@ const FooterItem = (props: FooterItemProps) => {
   );
 };
 
-const Footer = () => (
-  <div className={styles.container}>
-    <div className={styles.wrapper}>
-      <FooterItem
-        Logo={FacebookLogo}
-        css={styles.logo__facebook}
-        text="Facebook"
-        url="https://facebook.com/carlogihooh"
-      />
-      <FooterItem
-        Logo={LinkedinLogo}
-        css={styles.logo__linkedin}
-        text="LinkedIn"
-        url="https://www.linkedin.com/in/gihooh"
-      />
-      <FooterItem
-        Logo={TwitterLogo}
-        css={styles.logo__twitter}
-        text="Twitter"
-        url="https://twitter.com/carlogihooh"
-      />
-      <FooterItem
-        Logo={InstagramLogo}
-        css={styles.logo__instagram}
-        text="Instagram"
-        url="https://www.instagram.com/carlogihooh"
-      />
-      <FooterItem
-        Logo={GithubLogo}
-        css={styles.logo__github}
-        text="Github"
-        url="https://github.com/gihooh"
-      />
+const Footer = (props: {className: Object}) => {
+  const {className} = props;
+  return (
+    <div className={`${styles.container} ${className}`}>
+      <div className={styles.wrapper}>
+        <FooterItem
+          Logo={FacebookLogo}
+          css={styles.logo__facebook}
+          text="Facebook"
+          url="https://facebook.com/carlogihooh"
+        />
+        <FooterItem
+          Logo={LinkedinLogo}
+          css={styles.logo__linkedin}
+          text="LinkedIn"
+          url="https://www.linkedin.com/in/gihooh"
+        />
+        <FooterItem
+          Logo={TwitterLogo}
+          css={styles.logo__twitter}
+          text="Twitter"
+          url="https://twitter.com/carlogihooh"
+        />
+        <FooterItem
+          Logo={InstagramLogo}
+          css={styles.logo__instagram}
+          text="Instagram"
+          url="https://www.instagram.com/carlogihooh"
+        />
+        <FooterItem
+          Logo={GithubLogo}
+          css={styles.logo__github}
+          text="Github"
+          url="https://github.com/gihooh"
+        />
+      </div>
+      <div className={styles.copyright}>
+        <p>All rights reserve 2018</p>
+      </div>
     </div>
-    <div className={styles.copyright}>
-      <p>All rights reserve 2018</p>
-    </div>
-  </div>
-);
+  );
+};
 
 export default Footer;

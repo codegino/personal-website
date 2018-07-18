@@ -4,14 +4,15 @@ import { NavLink } from 'react-router-dom';
 import MultiLink from './MultiLink';
 import styles from './Header.scss';
 
-const Header = () => {
+const Header = (props: {className: Object}) => {
+  const {className} = props;
   const links = [
     { title: 'About Me', to: '/about-me' },
     { title: 'About this Site', to: '/about-website' },
   ];
 
   return (
-    <header className={styles.container}>
+    <header className={`${styles.container} ${className}`}>
       <NavLink exact to="/">
         <MyLogo className={styles.logo} width={20} height={20} />
       </NavLink>

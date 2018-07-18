@@ -1,26 +1,28 @@
+@import './variables.scss';
+
 .link {
   text-decoration: none;
   color: #fff;
   transition: all .5s;
   &:link {
-    color: #fff;
+    color: $color-light-light;
   }
   &:visited {
-    color: #ccc;
+    color: $color-light-dark;
   }
 
   &__active {
-    color: yellowgreen;
+    color: $color-primary-accent;
     text-decoration: underline;
   }
 
   &:hover {
-    p {
+    p, h3 {
       transition: all .25s;
       transform: scale(1.2);
-      color: yellowgreen;
+      color: $color-primary-light;
       text-decoration: underline;
-      text-decoration-color: yellow;
+      text-decoration-color: $color-primary-accent;
     }
   }
 }

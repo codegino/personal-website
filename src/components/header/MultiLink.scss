@@ -7,10 +7,10 @@
       font-size: 4rem;
     }
     @media #{$sm-device} {
-      font-size: 3.5rem;
+      font-size: 200%;
     }
     @media #{$md-device} {
-      font-size: 2rem;
+      font-size: 200%;
     }
   }
 }
@@ -24,6 +24,9 @@
       background-color: $color-dark;
       border: 1px solid $color-light;
       top: 1.5rem;
+      @media #{$md-device} {
+        top: 2rem;
+      }
       padding: 2rem 1.5rem 1rem 1.5rem;
       box-shadow: 0 0 1px 1px $color-primary-accent;
       width: auto;
