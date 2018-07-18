@@ -1,0 +1,20 @@
+@import '../../assets/styles/variables.scss';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: Rotating 2s infinite;
+  border: 2px solid rgba(0, 0, 0, .2);
+  padding: .5rem;
+  border-radius: 50%;
+}
+
+@keyframes Rotating {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}

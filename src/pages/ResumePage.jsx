@@ -8,7 +8,7 @@ import WorkExperience from 'components/work_experience/WorkExperience';
 import Checkpoint from 'components/button/checkpoint/Checkpoint';
 import Education from 'components/education/Education';
 import Certificates from 'components/certificates/Certificates';
-import LoadingMask from 'components/masks/LoadingMask';
+import LoadingMask from 'components/loading/LoadingMask';
 import { fetchUserDetails } from 'store/actions/user';
 import { fetchResume } from 'store/actions/resume';
 import styles from './ResumePage.scss';

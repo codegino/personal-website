@@ -1,4 +1,5 @@
 import React from 'react';
+import LoadingIcon from 'components/loading/LoadingIcon';
 import styles from './AutoTyper.scss';
 
 type AutoTyperProps = {
@@ -111,10 +112,10 @@ class AutoTyper extends React.PureComponent<AutoTyperProps> {
 
   render() {
     const { inputMessage } = this.state;
-    const { className, style } = this.props;
+    const { className, style, messages } = this.props;
     return (
       <div className={`${styles.input} ${className}`} style={style}>
-        {inputMessage}
+        {messages.length === 0 ? <LoadingIcon /> : inputMessage}
       </div>
     );
   }
