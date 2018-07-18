@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from 'components/header/Header';
-import Footer from 'components/footer/Footer';
+import Header from 'personal_website/components/header/Header';
+import Footer from 'personal_website/components/footer/Footer';
 import styles from './AboutMe.scss';
 
 const AboutMe = () => (

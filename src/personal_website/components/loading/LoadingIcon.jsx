@@ -1,7 +1,7 @@
 import React from 'react';
 
-import MyLogo from 'assets/images/logo.svg';
-import Reload from 'assets/images/reload.svg';
+import MyLogo from 'personal_website/assets/images/logo.svg';
+import Reload from 'personal_website/assets/images/reload.svg';
 import styles from './LoadingIcon.scss';
 
 type LoadingIconProps = {

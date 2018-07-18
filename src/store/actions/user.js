@@ -1,6 +1,6 @@
 import {
   databaseRef
-} from 'services/firebase';
+} from 'personal_website/services/firebase';
 import { onLoadingStart, onLoadingEnd } from './ui';
 
 export const FETCH_USER_SUCCESS = 'FETCH_USER_START';

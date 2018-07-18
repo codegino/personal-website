@@ -1,9 +1,9 @@
 import React from 'react';
-import TwitterLogo from 'assets/images/social/twitter.svg';
-import LinkedinLogo from 'assets/images/social/linkedin.svg';
-import FacebookLogo from 'assets/images/social/facebook.svg';
-import InstagramLogo from 'assets/images/social/instagram.svg';
-import GithubLogo from 'assets/images/social/github.svg';
+import TwitterLogo from 'personal_website/assets/images/social/twitter.svg';
+import LinkedinLogo from 'personal_website/assets/images/social/linkedin.svg';
+import FacebookLogo from 'personal_website/assets/images/social/facebook.svg';
+import InstagramLogo from 'personal_website/assets/images/social/instagram.svg';
+import GithubLogo from 'personal_website/assets/images/social/github.svg';
 import styles from './Footer.scss';
 
 type FooterItemProps = {

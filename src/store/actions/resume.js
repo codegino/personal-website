@@ -1,6 +1,6 @@
 import {
   databaseRef
-} from 'services/firebase';
+} from 'personal_website/services/firebase';
 import {
   onLoadingEnd,
   onLoadingStart,

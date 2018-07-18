@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from 'components/header/Header';
-import Footer from 'components/footer/Footer';
-import ReactLogo from 'assets/images/brands/react.svg';
-import ReactRouterLogo from 'assets/images/brands/reactrouter.svg';
-import ReduxLogo from 'assets/images/brands/redux.svg';
-import JavascriptLogo from 'assets/images/brands/javascript.svg';
-import SassLogo from 'assets/images/brands/sass.svg';
-import BabelLogo from 'assets/images/brands/babel.svg';
-import WebpackLogo from 'assets/images/brands/webpack.svg';
+import Header from 'personal_website/components/header/Header';
+import Footer from 'personal_website/components/footer/Footer';
+import ReactLogo from 'personal_website/assets/images/brands/react.svg';
+import ReactRouterLogo from 'personal_website/assets/images/brands/reactrouter.svg';
+import ReduxLogo from 'personal_website/assets/images/brands/redux.svg';
+import JavascriptLogo from 'personal_website/assets/images/brands/javascript.svg';
+import SassLogo from 'personal_website/assets/images/brands/sass.svg';
+import BabelLogo from 'personal_website/assets/images/brands/babel.svg';
+import WebpackLogo from 'personal_website/assets/images/brands/webpack.svg';
 import styles from './AboutWebsite.scss';
 
 const AboutWebsite = () => {

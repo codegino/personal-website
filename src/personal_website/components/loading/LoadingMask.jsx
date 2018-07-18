@@ -1,5 +1,5 @@
 import React from 'react';
-import MyLogo from 'assets/images/logo.svg';
+import MyLogo from 'personal_website/assets/images/logo.svg';
 import styles from './LoadingMask.scss';
 
 const LoadingMask = () => (

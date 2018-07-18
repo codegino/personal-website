@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from 'components/header/Header';
-import Footer from 'components/footer/Footer';
-import Banner from 'components/banner/HomeBanner';
+import Header from 'personal_website/components/header/Header';
+import Footer from 'personal_website/components/footer/Footer';
+import Banner from 'personal_website/components/banner/HomeBanner';
 import styles from './HomePage.scss';
 
 const HomePage = () => (

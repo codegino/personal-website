@@ -1,5 +1,5 @@
 import React from 'react';
-import LoadingIcon from 'components/loading/LoadingIcon';
+import LoadingIcon from 'personal_website/components/loading/LoadingIcon';
 import styles from './AutoTyper.scss';
 
 type AutoTyperProps = {

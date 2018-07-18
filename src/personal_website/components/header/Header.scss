@@ -1,0 +1,54 @@
+@import '../../assets/styles/variables.scss';
+@import '../../assets/styles/links.scss';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 .25rem;
+  @media #{$md-device} {
+    padding: 0 .5rem;
+  }
+  @media #{$lg-device} {
+    padding: 0 .5rem;
+  }
+  @media #{$xl-device} {
+    padding: 0 .5rem;
+  }
+}
+
+.logo {
+  transition: all .5s;
+  background-color: $color-light-light;
+  border-radius: 50%;
+  border: 1px solid $color-light;
+  box-shadow: 0 0 1px 1px $color-dark-dark;
+  &:hover {
+    box-shadow: 0 0 10px 3px $color-primary-accent;
+    animation: Rotating 2s infinite;
+  }
+}
+
+@keyframes Rotating {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.wrapper {
+  align-self: center;
+  width: 100%;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 0;
+  li {
+    display: inline-block;
+    margin: .1rem 1rem;
+  }
+}

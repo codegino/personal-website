@@ -1,0 +1,110 @@
+@import '../../assets/styles/variables.scss';
+
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+.coverPhoto {
+  background-image: url("../../assets/images/cover.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50rem;
+  @media #{$xs-device} {
+    background-position: right;
+    height: 30rem;
+  }
+  @media #{$md-device} {
+    background-position: top;
+    height: 40rem;
+  }
+  @media #{$lg-device} {
+    height: 40rem;
+  }
+  @media #{$xl-device} {
+    height: 50rem;
+  }
+}
+
+.profileWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profilePicture {
+  height: 30rem;
+  width: 30rem;
+  background-image: url("../../assets/images/profile-image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  border: 3px solid white;
+  transform: translateY(-50%);
+  box-shadow: 0 0 10px 1px black;
+  @media #{$xs-device} {
+    height: 15rem;
+    width: 15rem;
+  }
+
+  @media #{$md-device} {
+    height: 20rem;
+    width: 20rem;
+  }
+
+  @media #{$lg-device} {
+    height: 20rem;
+    width: 20rem;
+  }
+}
+
+.profileSummary {
+  height: auto;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--light-gray-1);
+  margin-top: -30.5rem;
+  flex-direction: column;
+  @media #{$xs-device} {
+    margin-top: -15.5rem;
+    padding-top: 8rem;
+  }
+  @media #{$md-device} {
+    padding-top: 6rem;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-top: -20.5rem;
+  }
+}
+
+
+@mixin details () {
+  padding-top: 5rem;
+  padding-top: 1rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.leftDetails {
+  @include details();
+  @media #{$md-device} {
+    text-align: left;
+    align-items: flex-start;
+    padding-left: 5%;
+  }
+}
+
+.rightDetails {
+  @include details();
+  @media #{$md-device} {
+    text-align: right;
+    align-items: flex-end;
+    padding-right: 5%;
+  }
+}

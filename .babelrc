@@ -7,7 +7,9 @@
       "root": ["./src", "./"],
       "alias": {
         "src": "./src",
-        "components": "./src/components"
+        "components": "./src/components",
+        "personal_website": "./src/personal_website",
+        "store": "./src/store"
       }
     }]
   ]
