@@ -1,0 +1,26 @@
+.link {
+  text-decoration: none;
+  color: #fff;
+  transition: all .5s;
+  &:link {
+    color: #fff;
+  }
+  &:visited {
+    color: #ccc;
+  }
+
+  &__active {
+    color: yellowgreen;
+    text-decoration: underline;
+  }
+
+  &:hover {
+    p {
+      transition: all .25s;
+      transform: scale(1.2);
+      color: yellowgreen;
+      text-decoration: underline;
+      text-decoration-color: yellow;
+    }
+  }
+}

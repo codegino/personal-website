@@ -1,8 +1,9 @@
 @import '../../assets/styles/variables.scss';
+@import '../../assets/styles/links.scss';
+
 .container {
   display: flex;
   justify-content: space-between;
-  font-size: 1.3rem;
   padding: 0 .25rem;
   @media #{$md-device} {
     padding: 0 .5rem;
@@ -17,10 +18,10 @@
 
 .logo {
   transition: all .5s;
-  background-color: white;
+  background-color: $color-light-light;
   border-radius: 50%;
-  border: 1px solid white;
-  box-shadow: 0 0 1px 1px black;
+  border: 1px solid $color-light;
+  box-shadow: 0 0 1px 1px $color-dark-dark;
   &:hover {
     transform: scale(1.2);
   }
@@ -39,32 +40,5 @@
   li {
     display: inline-block;
     margin: .1rem 1rem;
-  }
-}
-
-.link {
-  text-decoration: none;
-  color: #fff;
-  transition: all .5s;
-  &:link {
-    color: #fff;
-  }
-  &:visited {
-    color: #ccc;
-  }
-
-  &__active {
-    color: yellowgreen;
-    text-decoration: underline;
-  }
-
-  &:hover {
-    p {
-      transition: all .25s;
-      transform: scale(1.2);
-      color: yellowgreen;
-      text-decoration: underline;
-      text-decoration-color: yellow;
-    }
   }
 }

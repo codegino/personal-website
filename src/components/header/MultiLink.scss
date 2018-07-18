@@ -1,5 +1,48 @@
 @import '../../assets/styles/variables.scss';
+@import '../../assets/styles/links.scss';
+@mixin labelChange {
+  .label {
+    margin-bottom: 1rem;
+    @media #{$xs-device} {
+      font-size: 4rem;
+    }
+    @media #{$sm-device} {
+      font-size: 3.5rem;
+    }
+    @media #{$md-device} {
+      font-size: 2rem;
+    }
+  }
+}
 
 .container {
-  width: 20rem;
+  position: relative;
+  &:hover {
+    .listWrapper {
+      max-height: 1000px;
+      max-width: 1000px;
+      background-color: $color-dark;
+      border: 1px solid $color-light;
+      top: 1.5rem;
+      padding: 2rem 1.5rem 1rem 1.5rem;
+      box-shadow: 0 0 1px 1px $color-primary-accent;
+      width: auto;
+    }
+    @include labelChange;
+  }
+}
+
+.listWrapper {
+  transition: all .5s;
+  overflow: hidden;
+  max-height: 0;
+  max-width: 0;
+  position: absolute;
+  top: 0rem;
+  right: 0;
+  background-color: #ccc;
+  display: inline-flex;
+  flex-direction: column;
+  overflow: hidden;
+  white-space: nowrap;
 }

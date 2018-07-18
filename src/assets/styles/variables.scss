@@ -5,9 +5,45 @@ $lg-device: "only screen and (min-width : 900px)";
 $xl-device: "only screen and (min-width : 1200px)";
 
 $color-primary: green;
+$color-primary-contrast: #fff;
+$color-primary-light: green;
+$color-primary-light-contrast: green;
+$color-primary-dark: green;
+$color-primary-dark-contrast: green;
+$color-primary-accent: yellowgreen;
+$color-primary-accent-contrast: green;
+
 $color-secondary: blue;
+$color-secondary-contrast: #fff;
+$color-secondary-light: green;
+$color-secondary-light-contrast: green;
+$color-secondary-dark: green;
+$color-secondary-dark-contrast: green;
+$color-secondary-accent: green;
+$color-secondary-accent-contrast: green;
+
+$color-dark: #222;
+$color-dark-contrast: #fff;
+$color-dark-light: #555;
+$color-dark-light-contrast: green;
+$color-dark-dark: #000;
+$color-dark-dark-contrast: green;
+$color-dark-accent: green;
+$color-dark-accent-contrast: green;
+
+$color-light: #ddd;
+$color-light-contrast: #fff;
+$color-light-light: #fff;
+$color-light-light-contrast: green;
+$color-light-dark: #aaa;
+$color-light-dark-contrast: green;
+$color-light-accent: #eee;
+$color-light-accent-contrast: green;
+
 $light-gray-1: #eee;
-$dark-gray-1: #444;
+$light-gray-2: #bbb;
+$dark-gray-1: #222;
+$dark-gray-2: #777;
 
 $font-primary-color: #444;
 
