@@ -1,6 +1,6 @@
 import React from 'react';
 import DefaultButton from 'personal_website/components/button/DefaultButton';
-import { databaseRef } from 'personal_website/services/firebase';
+import { databaseRef } from 'services/firebase';
 import styles from './HomeBanner.scss';
 import AutoTyper from './AutoTyper';
 
