@@ -1,6 +1,7 @@
 import React from 'react';
 import MyLogo from 'assets/images/logo.svg';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import MultiLink from './MultiLink';
 import styles from './Header.scss';
 
 const Header = () => (
@@ -9,25 +10,18 @@ const Header = () => (
     <nav className={styles.wrapper}>
       <ul className={styles.links}>
         <li>
-          <Link to="/">
+          <NavLink exact activeClassName={styles.link__active} className={styles.link} to="/">
             <p>Home</p>
-          </Link>
+          </NavLink>
         </li>
-        {/* <li>
-          <Link to="/aboutme">
-            <p>About Me</p>
-          </Link>
-        </li> */}
         <li>
-          <Link to="/resume">
+          <NavLink activeClassName={styles.link__active} className={styles.link} to="/resume">
             <p>Resume</p>
-          </Link>
+          </NavLink>
         </li>
-        {/* <li>
-          <Link to="/contact">
-            <p>Contact</p>
-          </Link>
-        </li> */}
+        <li>
+          <MultiLink className={styles.multiLink} />
+        </li>
       </ul>
     </nav>
   </header>

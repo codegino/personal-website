@@ -9,7 +9,6 @@ const App = () => (
       <Route exact path="/" component={HomePage} />
       <Route path="/resume" component={ResumePage} />
       <Route path="/aboutme" component={ResumePage} />
-      <Route path="/contact" component={ResumePage} />
     </Switch>
   </main>
 );

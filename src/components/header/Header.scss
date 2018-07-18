@@ -1,5 +1,4 @@
 @import '../../assets/styles/variables.scss';
-
 .container {
   display: flex;
   justify-content: space-between;
@@ -8,11 +7,9 @@
   @media #{$md-device} {
     padding: 0 .5rem;
   }
-
   @media #{$lg-device} {
     padding: 0 .5rem;
   }
-
   @media #{$xl-device} {
     padding: 0 .5rem;
   }
@@ -24,7 +21,6 @@
   border-radius: 50%;
   border: 1px solid white;
   box-shadow: 0 0 1px 1px black;
-
   &:hover {
     transform: scale(1.2);
   }
@@ -35,31 +31,40 @@
   width: 100%;
 }
 
-
 .links {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   margin: 0;
-
-  a {
-    text-decoration: none;
-
-    &:link {
-      color: white;
-    }
-
-    &:visited{
-      color: #ddd;
-    }
-  }
-
   li {
     display: inline-block;
     margin: .1rem 1rem;
-    transition: all .5s;
-    &:hover {
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+  transition: all .5s;
+  &:link {
+    color: #fff;
+  }
+  &:visited {
+    color: #ccc;
+  }
+
+  &__active {
+    color: yellowgreen;
+    text-decoration: underline;
+  }
+
+  &:hover {
+    p {
+      transition: all .25s;
       transform: scale(1.2);
+      color: yellowgreen;
+      text-decoration: underline;
+      text-decoration-color: yellow;
     }
   }
 }
