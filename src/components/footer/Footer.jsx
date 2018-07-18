@@ -23,7 +23,7 @@ const FooterItem = (props: FooterItemProps) => {
           <Logo className={`${css} ${styles.logo}`} width={30} height={30} />
         </a>
       </div>
-      <h3>{text}</h3>
+      <h3 className={styles.logo__name}>{text}</h3>
     </div>
   );
 };

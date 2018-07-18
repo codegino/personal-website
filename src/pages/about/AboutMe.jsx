@@ -9,7 +9,12 @@ const AboutMe = () => (
       <Header />
     </div>
     <div>
-      About Me
+      <h1>
+        About Me
+      </h1>
+      <h2>
+        This page is under construction!
+      </h2>
     </div>
     <Footer />
   </div>

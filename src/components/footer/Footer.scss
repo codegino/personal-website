@@ -6,8 +6,8 @@
   flex-direction: column;
   align-items: center;
   font-size: 1.3rem;
-  background-color: var(--light-gray-1);
-  padding: $margin-small 0 $margin-big 0;
+  background-color: $color-light;
+  padding: $margin-medium 0 $margin-big 0;
 }
 
 .wrapper {
