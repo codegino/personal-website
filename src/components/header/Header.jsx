@@ -12,7 +12,9 @@ const Header = () => {
 
   return (
     <header className={styles.container}>
-      <MyLogo className={styles.logo} width={20} height={20} />
+      <NavLink exact to="/">
+        <MyLogo className={styles.logo} width={20} height={20} />
+      </NavLink>
       <nav className={styles.wrapper}>
         <ul className={styles.links}>
           <li>

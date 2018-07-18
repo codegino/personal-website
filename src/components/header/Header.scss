@@ -23,7 +23,17 @@
   border: 1px solid $color-light;
   box-shadow: 0 0 1px 1px $color-dark-dark;
   &:hover {
-    transform: scale(1.2);
+    box-shadow: 0 0 10px 3px $color-primary-accent;
+    animation: Rotating 2s infinite;
+  }
+}
+
+@keyframes Rotating {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
   }
 }
 
