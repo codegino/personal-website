@@ -2,7 +2,6 @@
 @import '../../assets/styles/animations.scss';
 .container {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
   align-items: center;
   font-size: 1.3rem;
@@ -36,8 +35,8 @@
 }
 
 .photo {
-  height: 15rem;
-  width: 15rem;
+  min-height: 15rem;
+  min-width: 15rem;
   background-image: url("../../assets/images/profile-image.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -46,17 +45,9 @@
   box-shadow: 0 0 10px 1px black;
   margin-top: 2rem;
   margin-bottom: 10rem;
-  @media #{$xs-device} {
-    height: 15rem;
-    width: 15rem;
-  }
   @media #{$md-device} {
-    height: 20rem;
-    width: 20rem;
-  }
-  @media #{$lg-device} {
-    height: 20rem;
-    width: 20rem;
+    min-height: 20rem;
+    min-width: 20rem;
   }
   animation: slideInFromLeft 1.5s 0s ease;
 }
