@@ -23,9 +23,20 @@
   border: 1px solid $color-light;
   box-shadow: 0 0 1px 1px $color-dark-dark;
   z-index: 100;
+  animation: appearFromLarge 2s 0s ease;
   &:hover {
     box-shadow: 0 0 10px 3px $color-primary-accent;
     animation: rotateClockwise 2s infinite;
+  }
+}
+
+@keyframes appearFromLarge {
+  0% {
+    transform: scale(1.5);
+    box-shadow: 0 0 10px 3px $color-primary-accent;
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
