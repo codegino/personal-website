@@ -20,16 +20,16 @@ const Header = (props: { className: Object }) => {
         <ul className={styles.links}>
           <li>
             <NavLink exact activeClassName={styles.link__active} className={styles.link} to="/">
-              <p>Home</p>
+              <p className={styles.link}>Home</p>
             </NavLink>
           </li>
           <li>
             <NavLink activeClassName={styles.link__active} className={styles.link} to="/resume">
-              <p>Resume</p>
+              <p className={styles.link}>Resume</p>
             </NavLink>
           </li>
           <li>
-            <MultiLink className={styles.multiLink} title="About" links={links} />
+            <MultiLink className={styles.multiLink} title="ABOUT" links={links} />
           </li>
         </ul>
       </nav>

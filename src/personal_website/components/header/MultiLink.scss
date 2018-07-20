@@ -4,14 +4,11 @@
 @mixin labelChange {
   .label {
     animation: slideInFromBottom .75s 0s ease-out;
-    margin-bottom: 1rem;
+    padding: .5rem;
     @media #{$xs-device} {
       font-size: 4rem;
     }
     @media #{$sm-device} {
-      font-size: 200%;
-    }
-    @media #{$md-device} {
       font-size: 200%;
     }
   }

@@ -1,0 +1,13 @@
+@import '../../assets/styles/variables.scss';
+.container {
+  background-color: #eee;
+  border-radius: 50px;
+  border: 1px solid #333;
+  padding: .2rem 1rem;
+  box-shadow: 0 0 2px 1px $color-dark-dark;
+  margin: 5px 5px;
+
+  &:hover {
+    box-shadow: 0 0 5px 1px $color-dark-dark;
+  }
+}

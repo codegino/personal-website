@@ -20,7 +20,7 @@ const Certification = (props: CertificateProps) => {
       </div>
       <div className={`${styles.face} ${styles.faceBack}`}>
         <a href={url} target="blank" className={styles.url}>
-          <p>Click here to view certificate</p>
+          <p className={styles.link}>Click here to view certificate</p>
         </a>
       </div>
     </div>

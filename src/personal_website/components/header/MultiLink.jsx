@@ -5,20 +5,14 @@ import styles from './MultiLink.scss';
 type MultiLinkProps = {
   title: string,
   links: Array,
-}
+};
 
 class MultiLink extends React.PureComponent<MultiLinkProps> {
   render() {
     const { title, links = [] } = this.props;
 
     const linksList = links.map(link => (
-      <NavLink
-        exact
-        key={link.title}
-        activeClassName={styles.link__active}
-        className={styles.link}
-        to={link.to}
-      >
+      <NavLink activeClassName={styles.link__active} className={styles.link} exact key={link.title} to={link.to}>
         <p className={styles.label}>{link.title}</p>
       </NavLink>
     ));
