@@ -57,13 +57,11 @@ const AboutWebsite = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
-        <Header />
-      </div>
+      <Header className={styles.header} />
       <div className={styles.wrapper}>
         <h1>This website is powered by</h1>
         <div className={styles.content}>
-          <Gallery data={technologies}/>        
+          <Gallery data={technologies} />
         </div>
         <h2>Credits to these resources</h2>
         <div className={styles.logos}>
@@ -78,7 +76,7 @@ const AboutWebsite = () => {
           </a>
         </div>
       </div>
-      <Footer className={styles.footer}/>
+      <Footer className={styles.footer} />
     </div>
   );
 };

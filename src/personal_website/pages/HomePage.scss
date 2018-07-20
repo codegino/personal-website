@@ -1,28 +1,4 @@
 @import '../assets/styles/variables.scss';
+@import '../assets/styles/page.scss';
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  @media #{$xs-device} {
-    margin: 0rem 0rem;
-  }
-
-  @media #{$md-device} {
-    margin: 0rem 0.5rem;
-  }
-
-  @media #{$lg-device} {
-    margin: 1rem 1.5rem;
-  }
-
-  @media #{$xl-device} {
-    margin: 1rem 3rem;
-  }
-}
-
-.header {
-  background-color: #222;
-  padding: 2rem;
-  color: white;
-}
+@include container;

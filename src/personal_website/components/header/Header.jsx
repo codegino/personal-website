@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom';
 import MultiLink from './MultiLink';
 import styles from './Header.scss';
 
-const Header = (props: {className: Object}) => {
-  const {className} = props;
+const Header = (props: { className: Object }) => {
+  const { className } = props;
   const links = [
     { title: 'About Me', to: '/about-me' },
     { title: 'About this Site', to: '/about-website' },
@@ -29,7 +29,7 @@ const Header = (props: {className: Object}) => {
             </NavLink>
           </li>
           <li>
-            <MultiLink className={styles.multiLink} title="About" links={links}/>
+            <MultiLink className={styles.multiLink} title="About" links={links} />
           </li>
         </ul>
       </nav>

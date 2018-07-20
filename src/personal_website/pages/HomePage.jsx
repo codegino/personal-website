@@ -6,12 +6,8 @@ import styles from './HomePage.scss';
 
 const HomePage = () => (
   <div className={styles.container}>
-    <div className={styles.header}>
-      <Header />
-    </div>
-    <div className={styles.banner}>
-      <Banner />
-    </div>
+    <Header className={styles.header}/>
+    <Banner />
     <Footer />
   </div>
 );

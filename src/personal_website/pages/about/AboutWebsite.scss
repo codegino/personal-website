@@ -1,25 +1,12 @@
 @import '../../assets/styles/variables.scss';
 @import '../../assets/styles/links.scss';
-
-.container {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-
+@import '../../assets/styles/page.scss';
+@include container;
 .wrapper {
   margin-bottom: $margin-medium;
-  width: 90%;
-}
-
-.header {
-  background-color: #222;
-  padding: 2rem;
-  color: white;
-  margin-bottom: $margin-big;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -27,9 +14,14 @@
   display: flex;
   flex-wrap: wrap;
   border-bottom: 1px solid $color-dark-light;
-  margin-bottom: $margin-small; 
+  margin-bottom: $margin-small;
+  width: 90%;
+  align-self: center;
 }
 
+.header {
+  margin-bottom: $margin-big;
+}
 
 .footer {
   width: 100%;
@@ -38,7 +30,6 @@
 .logos {
   display: flex;
   flex-direction: column;
-  background-color: $color-light-light;
   a {
     align-self: center;
     padding: $padding-small;

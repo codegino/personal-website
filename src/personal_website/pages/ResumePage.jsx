@@ -158,9 +158,7 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
       <div className={styles.container}>
         <div className={styles.sideNavigation__container}>{sideCheckpoint}</div>
         <div className={styles.wrapper}>
-          <div className={styles.header}>
-            <Header />
-          </div>
+          <Header className={styles.header} />
           <div
             ref={el => {
               this.heroRef = el;
