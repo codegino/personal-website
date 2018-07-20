@@ -1,7 +1,9 @@
 @import '../../assets/styles/variables.scss';
 @import '../../assets/styles/links.scss';
+@import '../../assets/styles/animations.scss';
 @mixin labelChange {
   .label {
+    animation: slideInFromBottom .75s 0s ease-out;
     margin-bottom: 1rem;
     @media #{$xs-device} {
       font-size: 4rem;

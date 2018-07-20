@@ -1,6 +1,6 @@
 @import '../../assets/styles/variables.scss';
 @import '../../assets/styles/links.scss';
-
+@import '../../assets/styles/animations.scss';
 .container {
   display: flex;
   justify-content: space-between;
@@ -24,16 +24,7 @@
   box-shadow: 0 0 1px 1px $color-dark-dark;
   &:hover {
     box-shadow: 0 0 10px 3px $color-primary-accent;
-    animation: Rotating 2s infinite;
-  }
-}
-
-@keyframes Rotating {
-  0% {
-      transform: rotate(0deg);
-  }
-  100% {
-      transform: rotate(360deg);
+    animation: rotateClockwise 2s infinite;
   }
 }
 
@@ -48,6 +39,7 @@
   justify-content: flex-end;
   margin: 0;
   li {
+    animation: slideInFromTop .75s 0s ease-out;
     display: inline-block;
     margin: .1rem 1rem;
   }
