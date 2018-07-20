@@ -10,7 +10,7 @@
   color: $light-gray-2;
 
   &__animated {
-    background: linear-gradient(-45deg, #c12d1d, #7fb22c, #1c4fa0, #23A6D5, #23D5AB, #23A6D5, #E73C77);
+    background: linear-gradient(-45deg, #1dfc1d, #034e16, #1fbd1f, #076914);
     background-size: 400% 400%;
     animation: Gradient 15s ease infinite;
   }
@@ -49,7 +49,7 @@
     min-height: 20rem;
     min-width: 20rem;
   }
-  animation: slideInFromLeft 1.5s 0s ease;
+  animation: slideInFromLeft 1.5s 0s ease-out;
 }
 
 .transcript {
@@ -73,7 +73,7 @@
 }
 
 .autoTyper {
-  animation: slideInFromRight 1.5s 0s ease;
+  animation: slideInFromRight 1.5s 0s ease-out;
   padding: 1rem 2rem;
   width: 25rem;
   min-height: 8rem;

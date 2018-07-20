@@ -20,6 +20,9 @@
   0% {
     transform: translateX(-50%);
   }
+  95% {
+    transform: translateX(2%);
+  }
   100% {
     transform: translateX(0);
   }
@@ -37,6 +40,9 @@
 @keyframes slideInFromRight {
   0% {
     transform: translateX(50%);
+  }
+  95% {
+    transform: translateX(-2%);
   }
   100% {
     transform: translateX(0);
