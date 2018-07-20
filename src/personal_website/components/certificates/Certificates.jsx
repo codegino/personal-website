@@ -13,12 +13,16 @@ const Certification = (props: CertificateProps) => {
 
   return (
     <div className={styles.certificate}>
-      <h2>{name}</h2>
-      <h2>{provider}</h2>
-      <h3>{date}</h3>
-      <a href={url} target="blank" className={styles.url}>
-        <p>Click here to view certificate</p>
-      </a>
+      <div className={`${styles.face} ${styles.faceFront}`}>
+        <h2>{name}</h2>
+        <h2>{provider}</h2>
+        <h3>{date}</h3>
+      </div>
+      <div className={`${styles.face} ${styles.faceBack}`}>
+        <a href={url} target="blank" className={styles.url}>
+          <p>Click here to view certificate</p>
+        </a>
+      </div>
     </div>
   );
 };

@@ -88,6 +88,12 @@
 .certifications {
   align-self: center;
   margin-bottom: $margin-big;
+  width: 95%;
+
+  @media #{$sm-device} {
+    width: 80%;
+  }
+
 }
 
 .sideNavigation {

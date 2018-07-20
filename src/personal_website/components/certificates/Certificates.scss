@@ -15,44 +15,57 @@
 }
 
 .certifications {
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  flex-direction: column;
+  perspective: 10000px;
+  @media #{$md-device} {
+    flex-direction: row;
+    perspective: 5000px;
+  }
+  padding: 0 $padding-small;
 }
 
 .certificate {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 90%;
   margin-bottom: $margin-small;
-  border-radius: .5rem;
-  background-color: rgb(238, 238, 238);
-  border: 1px solid rgb(51, 51, 51);
-  padding: 2px 7px;
-  box-shadow: black 0px 0px 2px 1px;
-  transition: all .5s;
+  box-shadow: $color-light-dark 0px 0px 2px 1px;
   cursor: pointer;
-
-  @media #{$md-device}{
-    width: 40%;
+  position: relative;
+  height: 15rem;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  width: 100%;
+  @media #{$md-device} {
+    width: 45%;
   }
   &:hover {
-    color: rgb(238, 238, 238);
-    background-color: #111;
-    transform: scale(1.1);
-    margin: $margin-small;
+    box-shadow: $color-dark-dark 0px 0px 2px 1px;
+    transform: rotateY(180deg);
+  }
+}
 
-    .url {
-      margin-top: $margin-medium;
-      display: block;
-      color: white;
+.face {
+  position: absolute;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  &Front {
+    background-color: $color-light;
+    color: $color-light-contrast
+  }
+  &Back {
+    background-color: $color-primary-dark;
+    color: $color-primary-dark-contrast;
+    transform: rotateY( 180deg);
+    a {
+      color: $color-primary-dark-contrast;
     }
   }
-
-  .url {
-    display: none;
-  } 
 }
