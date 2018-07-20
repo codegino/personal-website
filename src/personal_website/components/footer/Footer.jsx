@@ -65,7 +65,7 @@ const Footer = (props: {className: Object}) => {
         />
       </div>
       <div className={styles.copyright}>
-        <p>All rights reserve 2018</p>
+        <p>All rights reserved 2018</p>
       </div>
     </div>
   );
