@@ -1,37 +1,58 @@
 @import '../../assets/styles/variables.scss';
-
+@import '../../assets/styles/links.scss';
 .container {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
   font-size: 1.3rem;
-  background-color: $color-light;
+  background-color: $color-dark;
   padding: $margin-medium 0 $margin-big 0;
 }
 
-.wrapper {
+.mainWrapper {
   display: flex;
-  justify-content: space-evenly;
-
   flex-direction: column;
-  @media #{$lg-device} {
+  flex-wrap: wrap;
+  width: 70%;
+  @media #{$md-device} {
     flex-direction: row;
-    align-self: stretch;
+  }
+}
+
+.subWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-direction: column;
+  margin-bottom: $margin-medium;
+  @media #{$md-device} {
+    width: 50%;
+    margin-bottom: $margin-small;
+  }
+  &Title {
+    color: $color-dark-contrast;
+  }
+  &Content {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    align-self: center;
   }
 }
 
 .copyright {
   margin-top: $margin-medium;
+  color: $color-dark-contrast;
 }
 
 .logo {
   transition: all .5s;
-
+  fill: $color-dark-contrast;
   &:hover {
     transform: scale(1.2);
   }
-
   &__twitter {
     &:hover {
       fill: #1da1f2;
