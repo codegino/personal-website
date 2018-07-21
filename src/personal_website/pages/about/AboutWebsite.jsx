@@ -18,40 +18,47 @@ const AboutWebsite = () => {
       Logo: ReactLogo,
       fill: '#61DAFB',
       link: 'https://reactjs.org/',
+      description: 'Chosen frontend library to build this website. Promotes reusability due to its component based approach.',
     },
     {
       name: 'React Redux',
       Logo: ReduxLogo,
       fill: '#764ABC',
       link: 'https://redux.js.org/',
+      description: 'Used to ease state handling. Made this application more predicatable to find bugs easier.',
     },
     {
       name: 'React Router',
       Logo: ReactRouterLogo,
       link: 'https://reacttraining.com/react-router/',
+      description: 'For easier handling of navigations. For easier development of Single Page Application.',
     },
     {
       name: 'Javascript',
       Logo: JavascriptLogo,
       fill: '#F7DF1E',
       link: 'https://www.javascript.com/',
+      description: 'Chosen language for general purpose programming.',
     },
     {
       name: 'Sass',
       Logo: SassLogo,
       fill: '#CC6699',
       link: 'https://sass-lang.com/',
+      description: 'CSS Transpiler for easier and more modular design.',
     },
     {
       name: 'Babel',
       Logo: BabelLogo,
       link: 'https://babeljs.io/',
+      description: 'Javascript transpiler for browser compatility.',
     },
     {
       name: 'Webpack',
       Logo: WebpackLogo,
       fill: '#8DD6F9',
       link: 'https://webpack.js.org/',
+      description: 'Development workflow',
     },
   ];
 

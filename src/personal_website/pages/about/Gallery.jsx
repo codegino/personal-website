@@ -13,7 +13,7 @@ type ItemProps = {
 };
 
 const CurrentItem = (props: { ...ItemProps, link: string }) => {
-  const { Logo, name, fill = null, height = 150, width = 150, link, animationOrigin } = props;
+  const { Logo, name, fill = null, height = 150, width = 150, link, description, animationOrigin } = props;
 
   let animationStyle = null;
 
@@ -29,7 +29,8 @@ const CurrentItem = (props: { ...ItemProps, link: string }) => {
       <a href={link} target="blank">
         <Logo className={`${styles.logo} ${animationStyle}`} height={height} width={width} fill={fill} />
       </a>
-      <p style={{marginTop: '2rem'}}>Click icon to view link</p>
+      <p style={{marginTop: '2rem', width: '100%', alignSelf: 'center'}}>{description}</p>
+      <p style={{marginTop: '2rem', fontSize: '1rem'}}>Click icon to view link</p>
     </div>
   );
 };
