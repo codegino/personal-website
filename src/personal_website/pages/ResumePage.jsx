@@ -37,6 +37,8 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
 
   certificationRef = React.createRef();
 
+  footerRef = React.createRef();
+
   constructor(props) {
     super(props);
     this.handleScroll = this.handleScroll.bind(this);
@@ -73,6 +75,7 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
     let isWorkExperienceVisible = false;
     let isEducationVisible = false;
     let isCertificationVisible = false;
+    let isFooterVisible = false;
 
     if (this.isInViewport(this.heroRef)) {
       isHeroVisible = true;
@@ -84,6 +87,8 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
       isEducationVisible = true;
     } else if (this.isInViewport(this.certificationRef)) {
       isCertificationVisible = true;
+    } else if (this.isInViewport(this.footerRef)) {
+      isFooterVisible = true;
     }
 
     this.setState(prevState => ({
@@ -93,6 +98,7 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
       isWorkExperienceVisible,
       isEducationVisible,
       isCertificationVisible,
+      isFooterVisible,
     }));
   };
 
@@ -100,10 +106,10 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
     element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
   };
 
-  isInViewport = (element, offset = 0) => {
+  isInViewport = element => {
     if (!element) return false;
-    const { top } = element.getBoundingClientRect();
-    return top + offset >= 0 && top - offset <= window.innerHeight;
+    const { top, bottom } = element.getBoundingClientRect();
+    return (top >= 0 && top <= window.innerHeight) || (bottom >= 0 && bottom > window.innerHeight);
   };
 
   handleScroll = () => {
@@ -117,6 +123,7 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
       isWorkExperienceVisible,
       isEducationVisible,
       isCertificationVisible,
+      isFooterVisible,
     } = this.state;
 
     const CP = prop => (
@@ -147,6 +154,7 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
           visible={isCertificationVisible}
           title="Certifications"
         />
+        <CP reference={this.footerRef} visible={isFooterVisible} title="Footer" />
       </div>
     );
 
@@ -181,7 +189,7 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
               this.workExperienceRef = el;
             }}
           >
-            <WorkExperience experiences={resume.experiences}/>
+            <WorkExperience experiences={resume.experiences} />
           </div>
           <div
             className={styles.education}
@@ -189,7 +197,7 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
               this.educationRef = el;
             }}
           >
-            <Education education={resume.education}/>
+            <Education education={resume.education} />
           </div>
           <div
             className={styles.certifications}
@@ -197,9 +205,13 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
               this.certificationRef = el;
             }}
           >
-            <Certificates certifications={resume.certifications}/>
+            <Certificates certifications={resume.certifications} />
           </div>
-          <div>
+          <div
+            ref={el => {
+              this.footerRef = el;
+            }}
+          >
             <Footer />
           </div>
         </div>
