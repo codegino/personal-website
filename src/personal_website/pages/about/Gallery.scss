@@ -35,8 +35,32 @@
 }
 
 .logo {
+  &FromRight {
+    animation: slideGrowFromRIght 1s 0s ease;
+  }
+  &FromLeft {
+    animation: slideGrowFromLeft 1s 0s ease;
+  }
   &:hover {
     transition: all .5s;
     transform: scale(1.1);
+  }
+}
+
+@keyframes slideGrowFromLeft {
+  0% {
+    transform: translateX(-50%) scale(.2);
+  }
+  100% {
+    transform: translateX(0%) scale(1);
+  }
+}
+
+@keyframes slideGrowFromRIght {
+  0% {
+    transform: translateX(50%) scale(.2);
+  }
+  100% {
+    transform: translateX(0%) scale(1);
   }
 }

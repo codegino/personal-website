@@ -9,16 +9,25 @@ type ItemProps = {
   fill: string,
   height: number,
   width: number,
+  animationOrigin: string,
 };
 
 const CurrentItem = (props: { ...ItemProps, link: string }) => {
-  const { Logo, name, fill = null, height = 150, width = 150, link } = props;
+  const { Logo, name, fill = null, height = 150, width = 150, link, animationOrigin } = props;
+
+  let animationStyle = null;
+
+  if ( animationOrigin === 'left' ) {
+    animationStyle = styles.logoFromLeft;
+  } else if ( animationOrigin === 'right') {
+    animationStyle = styles.logoFromRight;
+  }
 
   return (
     <div className={styles.data} key={name}>
       <h2>{name}</h2>
       <a href={link} target="blank">
-        <Logo className={styles.logo} height={height} width={width} fill={fill} />
+        <Logo className={`${styles.logo} ${animationStyle}`} height={height} width={width} fill={fill} />
       </a>
       <p style={{marginTop: '2rem'}}>Click icon to view link</p>
     </div>
@@ -26,11 +35,19 @@ const CurrentItem = (props: { ...ItemProps, link: string }) => {
 };
 
 const PreviewItem = (props: ItemProps) => {
-  const { Logo, name, fill = null, height = 20, width = 20 } = props;
+  const { Logo, name, fill = null, height = 20, width = 20, animationOrigin } = props;
+
+  let animationStyle = null;
+
+  if ( animationOrigin === 'left' ) {
+    animationStyle = styles.logoFromLeft;
+  } else if ( animationOrigin === 'right') {
+    animationStyle = styles.logoFromRight;
+  }
 
   return (
     <div className={styles.technology} key={name}>
-      <Logo height={height} width={width} fill={fill} />
+      <Logo className={animationStyle} height={height} width={width} fill={fill} />
     </div>
   );
 };
@@ -40,14 +57,15 @@ class Gallery extends React.PureComponent<{ data: Array }> {
     current: 1,
     prev: 0,
     next: 2,
+    origin: null,
   };
 
   onLeftClick = () => {
-    this.previousItem();
+    this.nextItem();
   };
 
   onRightClick = () => {
-    this.nextItem();
+    this.previousItem();
   };
 
   previousItem = () => {
@@ -60,6 +78,7 @@ class Gallery extends React.PureComponent<{ data: Array }> {
         current: gen(prevState.current),
         prev: gen(prevState.prev),
         next: gen(prevState.next),
+        origin: 'left',
       };
     });
   };
@@ -74,30 +93,31 @@ class Gallery extends React.PureComponent<{ data: Array }> {
         current: gen(prevState.current),
         prev: gen(prevState.prev),
         next: gen(prevState.next),
+        origin: 'right',
       };
     });
   };
 
   render() {
-    const { current, prev, next } = this.state;
+    const { current, prev, next, origin } = this.state;
     const { data } = this.props;
 
     return (
       <div className={styles.container}>
         <div className={styles.dataWrapper}>
           <div className={styles.current}>
-            <CurrentItem {...data[current]} />
+            <CurrentItem {...data[current]} animationOrigin={ origin }/>
           </div>
         </div>
         <div className={styles.arrowWrapper}>
           {/* eslint-disable-next-line */}
           <div onClick={this.onLeftClick} style={{ display: 'flex', alignItems: 'center' }}>
             <LeftArrowIcon className={styles.arrow} width={40} height={40} />
-            <PreviewItem {...data[prev]} />
+            <PreviewItem {...data[prev]} animationOrigin={origin} />
           </div>
           {/* eslint-disable-next-line */}
           <div onClick={this.onRightClick} style={{ display: 'flex', alignItems: 'center' }}>
-            <PreviewItem {...data[next]} />
+            <PreviewItem {...data[next]} animationOrigin={origin}/>
             <RightArrowIcon className={styles.arrow} width={40} height={40} />
           </div>
         </div>
