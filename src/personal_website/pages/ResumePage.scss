@@ -1,23 +1,7 @@
 @import '../assets/styles/variables.scss';
 @import '../assets/styles/animations.scss';
-.container {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  @media #{$xs-device} {
-    margin: 0rem 0rem;
-  }
-  @media #{$md-device} {
-    margin-right: 0.5rem;
-  }
-  @media #{$lg-device} {
-    margin-right: 1.5rem;
-  }
-  @media #{$xl-device} {
-    margin-right: 1rem 3rem;
-  }
-}
-
+@import '../assets/styles/page.scss';
+@include container;
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -73,7 +57,6 @@
   align-self: center;
   width: 95%;
   margin-bottom: $margin-medium;
-
   @media #{$sm-device} {
     width: 90%;
   }
@@ -86,11 +69,9 @@
   align-self: center;
   margin-bottom: $margin-big;
   width: 95%;
-
   @media #{$sm-device} {
     width: 80%;
   }
-
 }
 
 .sideNavigation {
@@ -101,12 +82,12 @@
     background-color: rgba($color-dark-dark, .1);
     display: none;
     position: fixed;
+    top: 0;
+    left: 0;
     animation: opaqueAppear 2s 0s ease;
-
     @media #{$sm-device} {
       display: flex;
     }
-
     @media #{$md-device} {
       display: flex;
     }

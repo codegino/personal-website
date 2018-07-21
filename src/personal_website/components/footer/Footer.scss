@@ -7,7 +7,7 @@
   align-items: center;
   font-size: 1.3rem;
   background-color: $color-dark;
-  padding: $margin-medium 0 $margin-big 0;
+  padding: $margin-medium 0 $margin-small 0;
 }
 
 .mainWrapper {
@@ -32,6 +32,7 @@
   }
   &Title {
     color: $color-dark-contrast;
+    margin-bottom: $margin-medium;
   }
   &Content {
     text-align: left;
