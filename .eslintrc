@@ -1,0 +1,64 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["prettier", "prettier/react", "airbnb", "plugin:react/recommended"],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["prettier", "react", "flowtype", "jsx-a11y", "import"],
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "react/prefer-stateless-function": [
+      2,
+      {
+        "ignorePureComponents": true
+      }
+    ],
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "react/forbid-prop-types": [
+      0,
+      {
+        "forbid": []
+      }
+    ],
+    "import/extensions": [
+      1,
+      "never",
+      {
+        "svg": "always"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true,
+        "optionalDependencies": false,
+        "peerDependencies": false
+      }
+    ]
+  },
+  "env": {
+    "jest": true,
+    "browser": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src", "test"]
+      }
+    }
+  },
+  "globals": {
+    "document": true,
+    "window": true,
+    "_": true
+  }
+}

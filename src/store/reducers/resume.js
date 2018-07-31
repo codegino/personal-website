@@ -1,6 +1,4 @@
-import {
-  FETCH_RESUME_SUCCESS
-} from 'store/actions/resume';
+import { FETCH_RESUME_SUCCESS } from 'store/actions/resume';
 
 const defaultState = {
   resume: {
@@ -18,9 +16,9 @@ export default (state = defaultState, action) => {
     case FETCH_RESUME_SUCCESS:
       return {
         ...state,
-        resume: action.resume
+        resume: action.resume,
       };
     default:
       return state;
   }
-}
+};

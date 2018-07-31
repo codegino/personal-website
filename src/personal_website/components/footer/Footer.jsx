@@ -19,9 +19,9 @@ const FooterItem = (props: FooterItemProps) => {
   return (
     <div style={{ display: 'flex', alignItems: 'center' }}>
       {/* <div style={{ marginRight: '.5rem' }}> */}
-        <a href={url} target="blank">
-          <Logo className={`${css} ${styles.logo}`} width={30} height={30} />
-        </a>
+      <a href={url} target="blank">
+        <Logo className={`${css} ${styles.logo}`} width={30} height={30} />
+      </a>
       {/* </div> */}
     </div>
   );

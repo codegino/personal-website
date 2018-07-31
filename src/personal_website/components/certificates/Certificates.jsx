@@ -9,7 +9,9 @@ type CertificateProps = {
 };
 
 const Certification = (props: CertificateProps) => {
-  const { name, provider, date, url } = props;
+  const {
+    name, provider, date, url,
+  } = props;
 
   return (
     <div className={styles.certificate}>

@@ -20,7 +20,7 @@ const Hero = (props: { className: Object }) => {
         </div>
       </div>
     </div>
-  )
+  );
 };
 
 export default Hero;

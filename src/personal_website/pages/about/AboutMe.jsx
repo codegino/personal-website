@@ -7,7 +7,11 @@ import { fetchAboutMe } from 'store/actions/about';
 import LoadingMask from 'personal_website/components/loading/LoadingMask';
 import styles from './AboutMe.scss';
 
-class AboutMe extends React.PureComponent<{ aboutMe: Array, fetchAbout: Function, loading: boolean }> {
+class AboutMe extends React.PureComponent<{
+  aboutMe: Array,
+  fetchAbout: Function,
+  loading: boolean,
+}> {
   componentDidMount() {
     const { fetchAbout } = this.props;
     fetchAbout();
@@ -15,26 +19,24 @@ class AboutMe extends React.PureComponent<{ aboutMe: Array, fetchAbout: Function
 
   render() {
     const { loading, aboutMe } = this.props;
-    const message = aboutMe.map(o => {
+    const message = aboutMe.map((o) => {
       switch (o.type) {
         case 'p':
-          return <p key={o.text}>{o.text}</p>
+          return <p key={o.text}>{o.text}</p>;
         default:
-          return <p key={o.text}>{o.text}</p>
+          return <p key={o.text}>{o.text}</p>;
       }
-    })
+    });
     return loading ? (
       <LoadingMask />
     ) : (
-        <div className={styles.container}>
-          <Header className={styles.header} />
-          <Hero className={styles.hero}/>
-          <div className={styles.content}>
-            {message}
-          </div>
-          <Footer />
-        </div>
-      );
+      <div className={styles.container}>
+        <Header className={styles.header} />
+        <Hero className={styles.hero} />
+        <div className={styles.content}>{message}</div>
+        <Footer />
+      </div>
+    );
   }
 }
 
@@ -49,5 +51,5 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(AboutMe);

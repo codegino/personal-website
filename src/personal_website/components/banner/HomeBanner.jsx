@@ -15,11 +15,10 @@ class HomeBanner extends React.PureComponent {
     databaseRef
       .child('personal')
       .child('messages')
-      .on('value', snapshot => {
-        const [messages] = Object.values(snapshot.val());
+      .on('value', (snapshot) => {
         this.setState(prevState => ({
           ...prevState,
-          messages,
+          messages: snapshot.val(),
         }));
       });
   }
@@ -43,7 +42,11 @@ class HomeBanner extends React.PureComponent {
     const { messages, isToggleVisible, isTranscriptVisible } = this.state;
 
     const transcript = (
-      <div className={styles.transcript}>{messages.map(o => <p key={o}>{o}</p>)}</div>
+      <div className={styles.transcript}>
+        {messages.map(o => (
+          <p key={o}>{o}</p>
+        ))}
+      </div>
     );
 
     const toggleButton = isToggleVisible ? (

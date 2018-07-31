@@ -6,7 +6,7 @@ import styles from './HomePage.scss';
 
 const HomePage = () => (
   <div className={styles.container}>
-    <Header className={styles.header}/>
+    <Header className={styles.header} />
     <Banner />
     <Footer />
   </div>

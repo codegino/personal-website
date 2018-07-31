@@ -27,10 +27,9 @@ class AutoTyper extends React.PureComponent<AutoTyperProps> {
 
   iterateWithDelay = async (list, func, delay) => {
     let i = 0;
-    const sleep = ms =>
-      new Promise(resolve => {
-        setTimeout(resolve, ms);
-      });
+    const sleep = ms => new Promise((resolve) => {
+      setTimeout(resolve, ms);
+    });
 
     const loop = async () => {
       while (i < list.length) {
@@ -45,7 +44,7 @@ class AutoTyper extends React.PureComponent<AutoTyperProps> {
     loop();
   };
 
-  deleteMessage = async delay => {
+  deleteMessage = async (delay) => {
     const loop = async () => {
       // eslint-disable-next-line
       while (this.state.inputMessage.length > 0) {
@@ -62,10 +61,9 @@ class AutoTyper extends React.PureComponent<AutoTyperProps> {
     await loop();
   };
 
-  sleep = ms =>
-    new Promise(resolve => {
-      setTimeout(resolve, ms);
-    });
+  sleep = ms => new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
 
   addMessage = async (message, delay) => {
     let i = 0;
@@ -106,7 +104,7 @@ class AutoTyper extends React.PureComponent<AutoTyperProps> {
           onFinish();
         }
       },
-      nextMessageDelay
+      nextMessageDelay,
     );
   }
 

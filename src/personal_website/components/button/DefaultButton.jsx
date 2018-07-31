@@ -9,16 +9,14 @@ type DefaultButtonProps = {
 };
 
 const DefaultButton = (props: DefaultButtonProps) => {
-  const { children, onClick, style, className } = props;
+  const {
+    children, onClick, style, className,
+  } = props;
 
   return (
     <div className={styles.container}>
       {/* eslint-disable-next-line */}
-      <a
-        className={`${styles.btn} ${className}`}
-        style={{...style }}
-        onClick={onClick}
-      >
+      <a className={`${styles.btn} ${className}`} style={{ ...style }} onClick={onClick}>
         {children}
       </a>
     </div>

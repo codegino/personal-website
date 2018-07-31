@@ -18,20 +18,23 @@ const AboutWebsite = () => {
       Logo: ReactLogo,
       fill: '#61DAFB',
       link: 'https://reactjs.org/',
-      description: 'Chosen frontend library to build this website. Promotes reusability due to its component based approach.',
+      description:
+        'Chosen frontend library to build this website. Promotes reusability due to its component based approach.',
     },
     {
       name: 'React Redux',
       Logo: ReduxLogo,
       fill: '#764ABC',
       link: 'https://redux.js.org/',
-      description: 'Used to ease state handling. Made this application more predicatable to find bugs easier.',
+      description:
+        'Used to ease state handling. Made this application more predicatable to find bugs easier.',
     },
     {
       name: 'React Router',
       Logo: ReactRouterLogo,
       link: 'https://reacttraining.com/react-router/',
-      description: 'For easier handling of navigations. For easier development of Single Page Application.',
+      description:
+        'For easier handling of navigations. For easier development of Single Page Application.',
     },
     {
       name: 'Javascript',

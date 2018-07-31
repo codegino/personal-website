@@ -13,7 +13,9 @@ const Skills = (props: SkillsProp) => {
       <div className={styles.technologies}>
         <h1>Technologies</h1>
       </div>
-      {skills.map(skill => <SkillSet title={skill.title} key={skill.title} data={skill.skills} />)}
+      {skills.map(skill => (
+        <SkillSet title={skill.title} key={skill.title} data={skill.skills} />
+      ))}
     </div>
   );
 };

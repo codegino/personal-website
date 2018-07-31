@@ -102,11 +102,11 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
     }));
   };
 
-  scrollTo = element => {
+  scrollTo = (element) => {
     element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
   };
 
-  isInViewport = element => {
+  isInViewport = (element) => {
     if (!element) return false;
     const { top, bottom } = element.getBoundingClientRect();
     return (top >= 0 && top <= window.innerHeight) || (bottom >= 0 && bottom > window.innerHeight);
@@ -168,7 +168,7 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
         <div className={styles.wrapper}>
           <Header className={styles.header} />
           <div
-            ref={el => {
+            ref={(el) => {
               this.heroRef = el;
             }}
             className={styles.hero}
@@ -177,7 +177,7 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
           </div>
           <div
             className={styles.skills}
-            ref={el => {
+            ref={(el) => {
               this.skillsRef = el;
             }}
           >
@@ -185,7 +185,7 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
           </div>
           <div
             className={styles.experiences}
-            ref={el => {
+            ref={(el) => {
               this.workExperienceRef = el;
             }}
           >
@@ -193,7 +193,7 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
           </div>
           <div
             className={styles.education}
-            ref={el => {
+            ref={(el) => {
               this.educationRef = el;
             }}
           >
@@ -201,14 +201,14 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
           </div>
           <div
             className={styles.certifications}
-            ref={el => {
+            ref={(el) => {
               this.certificationRef = el;
             }}
           >
             <Certificates certifications={resume.certifications} />
           </div>
           <div
-            ref={el => {
+            ref={(el) => {
               this.footerRef = el;
             }}
           >
@@ -233,5 +233,5 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(ResumePage);

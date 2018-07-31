@@ -13,13 +13,22 @@ type ItemProps = {
 };
 
 const CurrentItem = (props: { ...ItemProps, link: string }) => {
-  const { Logo, name, fill = null, height = 150, width = 150, link, description, animationOrigin } = props;
+  const {
+    Logo,
+    name,
+    fill = null,
+    height = 150,
+    width = 150,
+    link,
+    description,
+    animationOrigin,
+  } = props;
 
   let animationStyle = null;
 
-  if ( animationOrigin === 'left' ) {
+  if (animationOrigin === 'left') {
     animationStyle = styles.logoFromLeft;
-  } else if ( animationOrigin === 'right') {
+  } else if (animationOrigin === 'right') {
     animationStyle = styles.logoFromRight;
   }
 
@@ -27,22 +36,29 @@ const CurrentItem = (props: { ...ItemProps, link: string }) => {
     <div className={styles.data} key={name}>
       <h2>{name}</h2>
       <a href={link} target="blank">
-        <Logo className={`${styles.logo} ${animationStyle}`} height={height} width={width} fill={fill} />
+        <Logo
+          className={`${styles.logo} ${animationStyle}`}
+          height={height}
+          width={width}
+          fill={fill}
+        />
       </a>
-      <p style={{marginTop: '2rem', width: '100%', alignSelf: 'center'}}>{description}</p>
-      <p style={{marginTop: '2rem', fontSize: '1rem'}}>Click icon to view link</p>
+      <p style={{ marginTop: '2rem', width: '100%', alignSelf: 'center' }}>{description}</p>
+      <p style={{ marginTop: '2rem', fontSize: '1rem' }}>Click icon to view link</p>
     </div>
   );
 };
 
 const PreviewItem = (props: ItemProps) => {
-  const { Logo, name, fill = null, height = 20, width = 20, animationOrigin } = props;
+  const {
+    Logo, name, fill = null, height = 20, width = 20, animationOrigin,
+  } = props;
 
   let animationStyle = null;
 
-  if ( animationOrigin === 'left' ) {
+  if (animationOrigin === 'left') {
     animationStyle = styles.logoFromLeft;
-  } else if ( animationOrigin === 'right') {
+  } else if (animationOrigin === 'right') {
     animationStyle = styles.logoFromRight;
   }
 
@@ -71,7 +87,7 @@ class Gallery extends React.PureComponent<{ data: Array }> {
 
   previousItem = () => {
     const { data } = this.props;
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const gen = num => (num === 0 ? data.length - 1 : num - 1);
 
       return {
@@ -87,7 +103,7 @@ class Gallery extends React.PureComponent<{ data: Array }> {
   nextItem = () => {
     const { data } = this.props;
 
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const gen = num => (num === data.length - 1 ? 0 : num + 1);
       return {
         ...prevState,
@@ -100,14 +116,16 @@ class Gallery extends React.PureComponent<{ data: Array }> {
   };
 
   render() {
-    const { current, prev, next, origin } = this.state;
+    const {
+      current, prev, next, origin,
+    } = this.state;
     const { data } = this.props;
 
     return (
       <div className={styles.container}>
         <div className={styles.dataWrapper}>
           <div className={styles.current}>
-            <CurrentItem {...data[current]} animationOrigin={ origin }/>
+            <CurrentItem {...data[current]} animationOrigin={origin} />
           </div>
         </div>
         <div className={styles.arrowWrapper}>
@@ -118,7 +136,7 @@ class Gallery extends React.PureComponent<{ data: Array }> {
           </div>
           {/* eslint-disable-next-line */}
           <div onClick={this.onRightClick} style={{ display: 'flex', alignItems: 'center' }}>
-            <PreviewItem {...data[next]} animationOrigin={origin}/>
+            <PreviewItem {...data[next]} animationOrigin={origin} />
             <RightArrowIcon className={styles.arrow} width={40} height={40} />
           </div>
         </div>

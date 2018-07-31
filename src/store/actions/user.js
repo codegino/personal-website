@@ -1,11 +1,8 @@
-import {
-  databaseRef
-} from 'services/firebase';
+import { databaseRef } from 'services/firebase';
 import { onLoadingStart, onLoadingEnd } from './ui';
 
 export const FETCH_USER_SUCCESS = 'FETCH_USER_START';
 export const FETCH_USER_FAIL = 'FETCH_USER_START';
-
 
 type UserProps = {
   birthday: string,
@@ -16,21 +13,20 @@ type UserProps = {
   company: string,
   jobTitle: string,
   location: string,
-}
+};
 
 export const fetchUserSuccess = (user: UserProps) => ({
   type: FETCH_USER_SUCCESS,
   user,
 });
 
-export const fetchUserDetails = () => dispatch => {
+export const fetchUserDetails = () => (dispatch) => {
   dispatch(onLoadingStart());
-  databaseRef.child('personal').on('value', snapshot => {
-    dispatch(fetchUserSuccess(snapshot.val()))
+  databaseRef.child('personal').on('value', (snapshot) => {
+    dispatch(fetchUserSuccess(snapshot.val()));
     dispatch(onLoadingEnd());
-  })
+  });
 };
-
 
 export const fetchUserFail = () => ({
   type: FETCH_USER_FAIL,

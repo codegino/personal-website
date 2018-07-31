@@ -15,7 +15,7 @@ const LoadingIcon = (props: LoadingIconProps) => {
 
   return (
     <div className={`${styles.container} ${className}`} style={style}>
-      <Reload className={styles.borderLogo} width={size * 2} height={size * 2 } />
+      <Reload className={styles.borderLogo} width={size * 2} height={size * 2} />
       <MyLogo className={styles.mainLogo} width={size} height={size} />
     </div>
   );

@@ -7,4 +7,4 @@ export default {
   colorSecondary: styles.colorSecondary,
   colorSecondaryLight: '',
   colorSecondaryDark: '',
-}
+};

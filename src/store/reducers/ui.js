@@ -1,7 +1,4 @@
-import {
-  ON_LOADING_END,
-  ON_LOADING_START,
-} from 'store/actions/ui';
+import { ON_LOADING_END, ON_LOADING_START } from 'store/actions/ui';
 
 const defaultState = {
   loading: false,
@@ -22,4 +19,4 @@ export default (state = defaultState, action) => {
     default:
       return state;
   }
-}
+};

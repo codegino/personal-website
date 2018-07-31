@@ -4,10 +4,10 @@ import Experience from './Experience';
 
 type WorkExperienceProps = {
   experiences: Array,
-}
+};
 
 const WorkExperience = (props: WorkExperienceProps) => {
-  const {experiences: experienceList} = props;
+  const { experiences: experienceList } = props;
   const experiences = experienceList.map(o => <Experience key={o.company} experience={o} />);
 
   return (

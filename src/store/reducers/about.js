@@ -1,9 +1,7 @@
-import {
-  FETCH_ABOUT_ME_SUCCESS
-} from 'store/actions/about';
+import { FETCH_ABOUT_ME_SUCCESS } from 'store/actions/about';
 
 const defaultState = {
-  texts: []
+  texts: [],
 };
 
 export default (state = defaultState, action) => {
@@ -11,9 +9,9 @@ export default (state = defaultState, action) => {
     case FETCH_ABOUT_ME_SUCCESS:
       return {
         ...state,
-        texts: action.texts
+        texts: action.texts,
       };
     default:
       return state;
   }
-}
+};
