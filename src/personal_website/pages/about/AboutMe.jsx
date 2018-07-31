@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Header from 'personal_website/components/header/Header';
 import Footer from 'personal_website/components/footer/Footer';
+import Hero from 'personal_website/components/hero/Hero';
 import { fetchAboutMe } from 'store/actions/about';
 import LoadingMask from 'personal_website/components/loading/LoadingMask';
 import styles from './AboutMe.scss';
@@ -27,10 +28,8 @@ class AboutMe extends React.PureComponent<{ aboutMe: Array, fetchAbout: Function
     ) : (
         <div className={styles.container}>
           <Header className={styles.header} />
+          <Hero className={styles.hero}/>
           <div className={styles.content}>
-            <h1>
-              About Me
-          </h1>
             {message}
           </div>
           <Footer />

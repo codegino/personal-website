@@ -9,10 +9,13 @@
   background-image: url("../../assets/images/cover.png");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 50rem;
   @media #{$xs-device} {
     background-position: right;
-    height: 30rem;
+    height: 20rem;
+  }
+  @media #{$sm-device} {
+    background-position: top;
+    height: 25rem;
   }
   @media #{$md-device} {
     background-position: top;
