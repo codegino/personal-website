@@ -1,4 +1,5 @@
 import React from 'react';
+import {databaseRef} from 'services/firebase';
 import Header from 'personal_website/components/header/Header';
 import Footer from 'personal_website/components/footer/Footer';
 import styles from './AboutMe.scss';
@@ -38,7 +39,10 @@ class AboutMe extends React.PureComponent {
   }
 
   componentDidMount() {
-    
+    databaseRef.child('personal').on('value', snapshot => {
+      dispatch(fetchUserSuccess(snapshot.val()))
+      dispatch(onLoadingEnd());
+    })
   }
 
   render() {
