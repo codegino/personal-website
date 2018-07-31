@@ -19,10 +19,9 @@ export const fetchAboutMe = () => dispatch => {
   databaseRef
     .child('about')
     .on('value', snapshot => {
-      const [texts] = Object.values(snapshot.val());
-      dispatch(fetchAboutMeSuccess({
-        texts
-      }));
+      dispatch(fetchAboutMeSuccess(
+        snapshot.val()
+      ));
       dispatch(onLoadingEnd());
     });
 };
