@@ -9,6 +9,7 @@ import Checkpoint from 'personal_website/components/button/checkpoint/Checkpoint
 import Education from 'personal_website/components/education/Education';
 import Certificates from 'personal_website/components/certificates/Certificates';
 import LoadingMask from 'personal_website/components/loading/LoadingMask';
+import MultiLink from 'personal_website/components/header/MultiLink';
 import { fetchUserDetails } from 'store/actions/user';
 import { fetchResume } from 'store/actions/resume';
 import styles from './ResumePage.scss';
@@ -175,6 +176,7 @@ class ResumePage extends React.PureComponent<ResumePageProps> {
           >
             <Hero user={userDetails} />
           </div>
+          <MultiLink title="&dArr;" links={resume.links} className={styles.downloads} isExternal />
           <div
             className={styles.skills}
             ref={(el) => {
