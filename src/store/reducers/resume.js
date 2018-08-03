@@ -7,6 +7,7 @@ const defaultState = {
     skills: [],
     experiences: [],
     certifications: [],
+    links: [],
   },
   test: 'Hello! Redux is working!',
 };

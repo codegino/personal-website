@@ -1,5 +1,10 @@
-import { databaseRef } from 'services/firebase';
-import { onLoadingEnd, onLoadingStart } from './ui';
+import {
+  databaseRef,
+} from 'services/firebase';
+import {
+  onLoadingEnd,
+  onLoadingStart,
+} from './ui';
 
 export const FETCH_RESUME_START = 'FETCH_RESUME_START';
 export const FETCH_RESUME_SUCCESS = 'FETCH_RESUME_START';
@@ -23,6 +28,7 @@ export const fetchResume = () => async (dispatch) => {
   let experiences = [];
   let certifications = [];
   let education = [];
+  let links = [];
 
   const skillsRef = new Promise((res) => {
     databaseRef
@@ -64,12 +70,23 @@ export const fetchResume = () => async (dispatch) => {
       });
   });
 
-  Promise.all([skillsRef, experiencesRef, certificationsRef, educationRef]).then(() => {
+  const linksRef = new Promise((res) => {
+    databaseRef
+      .child('resume')
+      .child('links')
+      .on('value', (snapshot) => {
+        links = snapshot.val();
+        res();
+      });
+  });
+
+  Promise.all([skillsRef, experiencesRef, certificationsRef, educationRef, linksRef]).then(() => {
     const resume = {
       skills,
       experiences,
       certifications,
       education,
+      links,
     };
 
     dispatch(fetchResumeSuccess(resume));
